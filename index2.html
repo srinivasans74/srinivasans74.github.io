@@ -1,282 +1,303 @@
-<!--
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<title>Srinivasan Subrmaniyan </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Srinivasan Subramaniyan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Navbar Styles */
+    nav {
+      background: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+    }
+
+    /* Header Styles */
+    header {
+      height: 30vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      color: white;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 2rem; /* Smaller size for the header text */
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      animation: flashingColors 5s infinite;
+      z-index: 2;
+      position: relative;
+    }
+
+    @keyframes flashingColors {
+      0% { color: #FF6347; }
+      25% { color: #1E90FF; }
+      50% { color: #32CD32; }
+      75% { color: #FFD700; }
+      100% { color: #FF6347; }
+    }
+
+    /* Snowfall Animation */
+    .snowfall {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.3); /* Slightly transparent background */
+    }
+
+    .snowflake {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      pointer-events: none;
+      animation: snowfall linear infinite;
+    }
+
+    @keyframes snowfall {
+      from {
+        transform: translateY(-100px);
+      }
+      to {
+        transform: translateY(calc(100vh + 100px));
+      }
+    }
+
+    /* Snowflake Sizes */
+    .snowflake:nth-child(1) { width: 10px; height: 10px; animation-duration: 5s; animation-delay: 0s; }
+    .snowflake:nth-child(2) { width: 15px; height: 15px; animation-duration: 6s; animation-delay: 2s; }
+    .snowflake:nth-child(3) { width: 20px; height: 20px; animation-duration: 7s; animation-delay: 2s; }
+
+    /* Main Section Styles */
+    main {
+      padding: 2rem;
+      margin: auto;
+      max-width: 1200px;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    section ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Quote Section Styles */
+    #quotes-section {
+      background-color: #003366;
+      color: white;
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 3rem;
+      font-style: italic;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    #quotes-section p {
+      font-size: 1.5rem;
+      margin-bottom: 0;
+    }
+
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: white;
+    }
+
+    /* Video Player Styles */
+    #video-section {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    iframe {
+      flex: 1;
+      height: 250px;
+      border: none;
+    }
+
+    /* Image Styles */
+    .header-image {
+      position: absolute;
+      width: 120px; /* Adjust width as needed */
+      height: auto;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .header-image.left {
+      top: 30px;
+      left: 30px;
+    }
+
+    .header-image.right {
+      top: 30px;
+      right:30px;
+    }
+
+  </style>
 </head>
 <body>
-<table summary="Table for page layout." id="tlayout">
-<tr valign="top">
-<td id="layout-menu">
-<div class="menu-category">About</div>
-<div class="menu-item"><a href="index.html" class="current">Home</a></div>
-<div class="menu-item"><a href="CV_January21 (1).pdf">CV</a></div>
-<div class="menu-item"><a href="https://www.linkedin.com/in/srinivasan-subramaniyan22/">Linkedin</a></div>
-<div class="menu-item"><a href="https://scholar.google.com/citations?user=luGswuwAAAAJ&hl=en&oi=ao">Google Scholar</a></div>
-<div class="menu-item"><a href="Academics.html">Academics</a></div>
-<div class="menu-category">Research</div>
-<div class="menu-item"><a href="publications.html">Publications</a></div>
-<div class="menu-item"><a href="awards.html">Awards</a></div>
-<div class="menu-category">Experience</div>
-<div class="menu-item"><a href="internship.html">Internships</a></div>
-<div class="menu-item"><a href="fulltime.html">Work Experience</a></div>
-<div class="menu-item"><a href="ta.html">TA&nbsp;duties</a></div>
-</td>
-<td id="layout-content">
-<div id="toptitle">
-<h1>Srinivasan Subrmaniyan </h1>
-</div>
-<table class="imgtable"><tr><td>
-<img src="srini_1.jpg" alt="150px" width="150px" height="pic2.jpg" />&nbsp;</td>
-<td align="left"><p>PhD Student (Full-time) <br />
-<a href="http://pacs.ece.ohio-state.edu/doku.php">PACS</a>, Ohio State university, US <br />
-Contact: subramaniyan [dot] 4 [at] osu [dot] edu
-<br /></p>
 
+  <nav>
+    <a href="#aboutme">About Me</a>
+    <a href="publications.html">Publications</a>
+    <a href="Academics.html">Education</a>
+    <a href="CV_January21 (1).pdf" target="_blank">CV</a>
+    <a href="fulltime.html">Experience</a>
+    <a href="awards.html">Awards</a>
+    <a href="https://www.linkedin.com/in/srinivasan-subramaniyan22/" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=luGswuwAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>
+  </nav>
 
-</td></tr></table>
-<h1>About me</h1>
-<ul>
-I am a third-year PhD student in the Electrical and Computer Engineering Department at Ohio State University. I am pursuing my PhD under the supervision of 
-Dr. Xiaorui Wang. My main research Interests is in Embedded and Real-time Systems. 
-I also explore topics like Data Center Computing, Computer Architecture and Systems and cyber-physical systems.
-</ul>
+  <header>
+    <div class="snowfall">
+      <!-- Snowflakes dynamically generated in JavaScript -->
+    </div>
+    <img src="6sigflgxu9z199koxpb5sv5cac3m.png" alt="Profile Image" class="header-image left">
+    <h1>Srinivasan Subramaniyan</h1>
+    <img src="6sigflgxu9z199koxpb5sv5cac3m.png" alt="Profile Image" class="header-image right">
+  </header>
 
+  <main>
+    <!-- About Me Section -->
+    <section id="aboutme">
+      <h2>About Me</h2>
+      <p>
+        I am a fourth-year PhD student in the Electrical and Computer Engineering Department at Ohio State University. I am pursuing my PhD under the supervision of Dr. Xiaorui Wang. My main research interests are in Embedded and Real-time Systems, Data Center Computing, Computer Architecture, and Cyber-Physical Systems.
+      </p>
+    </section>
 
-
-
-<h1>News</h1>
-<ul>
-</li>
-<li><p>
-	
-</p>
-<li><p>
-	I express my gratitude to the ECE Department for granting me the Dr. Bin Lin travel award for attending ICDCS 2024.
-</p>
-
-<li><p>
-	Click here for Old <a href="oldnews.html">News</a>
-</p>
-</li>
-</ul>
-
-
-<h1>Selected Publications</h1>
-<ul>
-<li><p>
-	Chen, Guoyu, Srinivasan Subramaniyan, and Xiaorui Wang. "Latency-Guaranteed Co-Location of Inference and Training for Reducing Data Center Expenses" IEEE 44th International Conference on Distributed Computing Systems (ICDCS) 2024.
-
-</ul>
-	
-<ul>
-<li><p> 
-	Srinivasan Subramaniyan, Oscar Ferraz, M. R. Ashuthosh, Santosh Krishna, Guohui Wang, Joseph R. Cavallaro, Vitor Silva, Gabriel Falcao, and Madhura Purnaprajna. "Enabling High-Level Design Strategies for High-Throughput and Low-Power NB-LDPC Decoders" IEEE Design & Test (2022).
-</ul>
+    <!-- Publications Section -->
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <ol>
+        <li><u>Srinivasan Subramaniyan</u> and Xiaorui Wang. "FC-GPU: Feedback Control GPU Scheduling for Real-time Embedded Systems" Embedded Systems Week – International Conference on Embedded Software (EMSOFT) 2025.</li>
+        <li>Yuan Ma, <u>Srinivasan Subramaniyan</u>, and Xiaorui Wang. "Power Capping of GPU Servers for Machine Learning Inference Optimization" 54th International Conference on Parallel Processing (ICPP) 2025.</li>
+        <li>Chen, Guoyu, <u>Srinivasan Subramaniyan</u>, and Xiaorui Wang. "Latency-Guaranteed Co-Location of Inference and Training for Reducing Data Center Expenses" IEEE 44th International Conference on Distributed Computing Systems (ICDCS) 2024.</li>
+      </ol>
+    </section>
 
 
 
+    <!-- Quote Section
+    <div id="quotes-section">
+      <p id="quote-text">"The only way to do great work is to love what you do." - Steve Jobs</p>
+    </div> -->
 
+    <!-- Video Section -->
+  <!-- Video Section -->
+   <!--
+  <section id="my-motivational-videos">
+    <div id="video-section">
+      <iframe src="https://www.youtube.com/embed/5hFd6zGkxLE" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/pq-L5SqXn24" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/R0alThHNb0Y" allowfullscreen></iframe>
+    </div>
+  </section>
+  -->
+  </main>
 
+  <footer>
+    <p>Contact: subramaniyan [dot] 4 [at] osu [dot] edu</p>
+    <p>&copy; 2025 Srinivasan Subramaniyan</p>
+  </footer>
 
-	
+  <!-- <script>
+    // Array of quotes
+    const quotes = [
+      '"The only way to do great work is to love what you do." - Steve Jobs',
+      '"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill',
+      '"To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment." - Ralph Waldo Emerson'
+    ];
 
-<h1>Research Interests</h1>
-<ul>
-<li><p>Real Time Systems, Operating Systems,Embedded Systems & Systems for Machine Learning</p>
-</li>
-<li><p>Computer Architecture, Parallel Computing, High-Performance Computing</p>
-</li>
-</ul>
+    // Function to update the quote every 4 seconds
+    function updateQuote() {
+      const quoteText = document.getElementById('quote-text');
+      let currentIndex = 0;
 
+      setInterval(() => {
+        quoteText.textContent = quotes[currentIndex];
+        currentIndex = (currentIndex + 1) % quotes.length;
+      }, 4000); // 4000 milliseconds = 4 seconds
+    }
 
-	
-<h1>Education</h1>
-<ul>
-<li><p>Ph.D, Electrical and Computer Engineering, The Ohio State University, US, 2021 - </p>
-	Minor in Systems: Computer Science and Engineering
-</li>
-<li><p>B.Tech, Electronics and Communication Engineering, Amrita Vishwa Vidyapeetham, India, 2015-2019</p>
-</li>
-</ul>
-</td>
-</tr>
-</table>
-</body>
-</html>
--->
+    // Initialize the quote rotation
+    updateQuote();
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<title>Srinivasan Subramaniyan</title>
-<style>
-/* CSS Animations and Styles */
+    // Snowfall effect
+    function createSnowflakes() {
+      const snowfallContainer = document.querySelector('.snowfall');
+      for (let i = 0; i < 50; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.style.left = Math.random() * 100 + 'vw';
+        snowflake.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        snowflake.style.animationDelay = Math.random() * 10 + 's';
+        snowfallContainer.appendChild(snowflake);
+      }
+    } -->
 
-@keyframes gradientAnimation {
-  0% { background-position: 0% 0%; }
-  50% { background-position: 100% 100%; }
-  100% { background-position: 0% 0%; }
-}
+    <!--createSnowflakes(); -->
+  </script>
 
-/* Full screen blue background */
-body {
-  background-color: #00aaff;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: #333; /* Dark grey text color for better contrast */
-}
-
-#toptitle {
-  background: linear-gradient(45deg, #00aaff);
-  background-size: 400% 400%;
-  animation: gradientAnimation 15s ease infinite;
-  padding: 20px;
-  color: white;
-  text-align: center;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-#toptitle h1 {
-  /* Removed animation for the name */
-}
-
-.menu-item a {
-  transition: color 0.3s ease, background-color 0.3s ease;
-  color: #f0f0f0; /* Light grey for links */
-}
-
-.menu-item a:hover {
-  color: #00aaff; /* Blue color on hover for contrast */
-  background-color: #333;
-}
-
-#layout-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.imgtable {
-  display: flex;
-  align-items: center;
-}
-
-.imgtable img {
-  /* Removed animation for the photo */
-}
-
-h1 {
-  margin-top: 20px;
-  /* Removed animation for the heading */
-}
-
-/* Styles for the bottom navy blue section with quotes */
-#quotes-section {
-  background-color: #003366; /* Navy blue color */
-  color: white;
-  padding: 20px;
-  text-align: center;
-  border-radius: 10px;
-  margin-top: 20px;
-}
-</style>
-</head>
-<body>
-<table summary="Table for page layout." id="tlayout">
-<tr valign="top">
-<td id="layout-menu">
-<div class="menu-category">About</div>
-<div class="menu-item"><a href="index.html" class="current">Home</a></div>
-<div class="menu-item"><a href="CV_January21 (1).pdf">CV</a></div>
-<div class="menu-item"><a href="https://www.linkedin.com/in/srinivasan-subramaniyan22/">Linkedin</a></div>
-<div class="menu-item"><a href="https://scholar.google.com/citations?user=luGswuwAAAAJ&hl=en&oi=ao">Google Scholar</a></div>
-<div class="menu-item"><a href="Academics.html">Academics</a></div>
-<div class="menu-category">Research</div>
-<div class="menu-item"><a href="publications.html">Publications</a></div>
-<div class="menu-item"><a href="awards.html">Awards</a></div>
-<div class="menu-category">Experience</div>
-<div class="menu-item"><a href="fulltime.html">Work Experience</a></div>
-<div class="menu-item"><a href="ta.html">TA&nbsp;duties</a></div>
-</td>
-<td id="layout-content">
-<div id="toptitle">
-<h1>Srinivasan Subramaniyan</h1>
-</div>
-<table class="imgtable"><tr><td>
-<!--<img src="srini_1.jpg" alt="150px" width="150px" height="150px" />&nbsp;</td> -->
-<td align="left"><p>PhD Student (Full-time) <br />
-<a href="http://pacs.ece.ohio-state.edu/doku.php">PACS</a>, Ohio State university, US <br />
-Contact: subramaniyan [dot] 4 [at] osu [dot] edu
-<br /></p>
-</td></tr></table>
-<h1>About me</h1>
-<ul>
-<li>I am a third-year PhD student in the Electrical and Computer Engineering Department at Ohio State University. I am pursuing my PhD under the supervision of Dr. Xiaorui Wang. My main research Interests is in Embedded and Real-time Systems. I also explore topics like Data Center Computing, Computer Architecture and Systems and cyber-physical systems.</li>
-</ul>
-
-<!-- 
-<h1>News</h1>
-<ul>
-<li>I express my gratitude to the ECE Department for granting me the Dr. Bin Lin travel award for attending ICDCS 2024.</li>
-<li><a href="oldnews.html">Click here for Old News</a></li>
-</ul>
--->
-
-<h1>Selected Publications</h1>
-<ul>
-<li>Chen, Guoyu, Srinivasan Subramaniyan, and Xiaorui Wang. "Latency-Guaranteed Co-Location of Inference and Training for Reducing Data Center Expenses" IEEE 44th International Conference on Distributed Computing Systems (ICDCS) 2024.</li>
-<li>Srinivasan Subramaniyan, Oscar Ferraz, M. R. Ashuthosh, Santosh Krishna, Guohui Wang, Joseph R. Cavallaro, Vitor Silva, Gabriel Falcao, and Madhura Purnaprajna. "Enabling High-Level Design Strategies for High-Throughput and Low-Power NB-LDPC Decoders" IEEE Design & Test (2022).</li>
-</ul>
-
-<h1>Research Interests</h1>
-<ul>
-<li>Real Time Systems, Operating Systems, Embedded Systems & Systems for Machine Learning, Computer Architecture, Parallel Computing, High-Performance Computing</li>
-</ul>
-
-<!-- New navy blue section for quotes -->
-<div id="quotes-section">
-<p id="quote-text">"The only way to do great work is to love what you do." - Steve Jobs</p>
-</div>
-
-<script>
-// Array of quotes
-const quotes = [
-  '"The only way to do great work is to love what you do." - Steve Jobs',
-  '"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill',
-  '"Life is what happens when you’re busy making other plans." - John Lennon',
-  '"In the end, we will remember not the words of our enemies, but the silence of our friends." - Martin Luther King Jr.',
-  '"To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment." - Ralph Waldo Emerson'
-];
-
-// Function to update the quote every 4 seconds
-function updateQuote() {
-  const quoteText = document.getElementById('quote-text');
-  let currentIndex = 0;
-
-  setInterval(() => {
-    quoteText.textContent = quotes[currentIndex];
-    currentIndex = (currentIndex + 1) % quotes.length;
-  }, 4000); // 4000 milliseconds = 4 seconds
-}
-
-// Initialize the quote rotation
-updateQuote();
-</script>
-
-</td>
-</tr>
-</table>
 </body>
 </html>
