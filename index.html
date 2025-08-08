@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Srinivasan Subramaniyan</title>
 
-  <!-- Fonts & Icon Sets -->
+  <!-- Fonts & Icon sets -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.4/css/academicons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* Reset & Base */
+    /* ===== Reset & Base ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Open Sans', sans-serif;
@@ -20,7 +20,7 @@
       color: #333;
     }
 
-    /* Navbar */
+    /* ===== Navbar ===== */
     nav {
       background: #333;
       color: #fff;
@@ -38,7 +38,7 @@
     }
     nav a:hover { color: #00aaff; }
 
-    /* Header */
+    /* ===== Header (no blue bg) ===== */
     header {
       height: 30vh;
       min-height: 260px;
@@ -48,36 +48,36 @@
       align-items: center;
       text-align: center;
       position: relative;
-      color: #fff;
+      color: #333;           /* darker name on light bg */
       overflow: hidden;
-      background: transparent; /* no blue background */
+      background: transparent;
     }
-
     header h1 {
       font-size: 2rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
       animation: flashingColors 5s infinite;
-      z-index: 2;
+      z-index: 3;            /* higher than snowfall */
       position: relative;
     }
     @keyframes flashingColors {
-      0% { color: #FF6347; }
-      25% { color: #1E90FF; }
-      50% { color: #32CD32; }
-      75% { color: #FFD700; }
-      100% { color: #FF6347; }
+      0% { color: #2e7d32; }
+      25% { color: #1565c0; }
+      50% { color: #d32f2f; }
+      75% { color: #f57f17; }
+      100% { color: #2e7d32; }
     }
 
-    /* Snowfall */
+    /* Snowfall overlay */
     .snowfall {
       position: absolute; inset: 0;
       pointer-events: none; overflow: hidden; z-index: 1;
+      /* no dark tint so icons stay crisp */
     }
     .snowflake {
       position: absolute;
       background: #fff;
       border-radius: 50%;
-      opacity: 0.8;
+      opacity: 0.7;
       pointer-events: none;
       animation: snowfall linear infinite;
     }
@@ -96,34 +96,37 @@
     .header-image.left  { top: 30px; left: 30px; }
     .header-image.right { top: 30px; right:30px; }
 
-    /* Social Icons Row (outlined style like reference) */
+    /* ===== Social Icons (solid black like your example) ===== */
     .social-links {
       display: flex;
-      gap: 10px;
+      gap: 14px;
       justify-content: center;
       align-items: center;
       margin-top: 14px;
-      z-index: 2;
+      z-index: 3;           /* above snowfall */
       flex-wrap: wrap;
     }
     .social-links a {
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      color: #fff;
-      font-size: 18px;
-      transition: all 0.2s ease;
-      background: transparent;
+      width: 46px; height: 46px;             /* nice size */
+      border-radius: 10px;                    /* squircle like example */
+      background: #000;                       /* solid black tile */
+      color: #fff;                            /* white glyph */
+      font-size: 22px;                        /* icon size */
+      text-decoration: none;
+      transition: transform .15s ease, filter .15s ease, background .15s ease, color .15s ease;
     }
     .social-links a:hover {
-      background: #fff;
+      transform: translateY(-2px);
+      background: #fff;                       /* invert on hover */
       color: #000;
+      outline: 2px solid #000;               /* keeps the tile edge on hover */
+      outline-offset: -2px;
     }
 
-    /* Main Sections */
+    /* ===== Main sections ===== */
     main { padding: 2rem; margin: auto; max-width: 1200px; }
     section {
       margin-bottom: 3rem;
@@ -133,10 +136,8 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
     section h2 { font-size: 2rem; margin-bottom: 1rem; }
-    section ul { list-style: none; padding: 0; }
-    section ul li { margin-bottom: .5rem; }
 
-    /* Footer */
+    /* ===== Footer ===== */
     footer {
       text-align: center;
       padding: 1rem;
@@ -144,11 +145,11 @@
       color: #fff;
     }
 
-    /* Responsive */
+    /* ===== Responsive ===== */
     @media (max-width: 560px) {
       .header-image.left, .header-image.right { display: none; }
       header h1 { font-size: 1.7rem; }
-      .social-links a { width: 36px; height: 36px; font-size: 16px; }
+      .social-links a { width: 42px; height: 42px; font-size: 20px; }
     }
   </style>
 </head>
@@ -165,20 +166,47 @@
 
   <header>
     <div class="snowfall"></div>
+
     <img src="6sigflgxu9z199koxpb5sv5cac3m.png" alt="Profile Image" class="header-image left">
 
     <h1>Srinivasan Subramaniyan</h1>
 
-    <!-- Icons row -->
-    <div class="social-links">
-      <a href="mailto:subramaniyan.4@osu.edu" title="Email"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://scholar.google.com/citations?user=luGswuwAAAAJ" target="_blank" title="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-      <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" title="ORCID"><i class="ai ai-orcid"></i></a>
-      <a href="https://www.researchgate.net/profile/Your-Profile" target="_blank" title="ResearchGate"><i class="ai ai-researchgate"></i></a>
-      <a href="https://github.com/yourusername" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/srinivasan-subramaniyan22/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="https://www.zotero.org/yourusername" target="_blank" title="Zotero"><i class="ai ai-zotero"></i></a>
-      <a href="/feed.xml" target="_blank" title="RSS"><i class="ai ai-rss"></i></a>
+    <!-- Icon row (solid black tiles like your screenshot) -->
+    <div class="social-links" aria-label="Profile links">
+      <!-- Email -->
+      <a href="mailto:subramaniyan.4@osu.edu" title="Email" aria-label="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+      <!-- ORCID -->
+      <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID">
+        <i class="ai ai-orcid"></i>
+      </a>
+      <!-- Google Scholar -->
+      <a href="https://scholar.google.com/citations?user=luGswuwAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+      <!-- ResearchGate -->
+      <a href="https://www.researchgate.net/profile/Your-Profile" target="_blank" rel="noopener" title="ResearchGate" aria-label="ResearchGate">
+        <i class="ai ai-researchgate"></i>
+      </a>
+      <!-- (Optional) OpenReview – Academicons doesn't include a dedicated icon.
+           If you need the diamond logo exactly, you'd use an SVG image instead. -->
+      <!-- GitHub -->
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/srinivasan-subramaniyan22/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <!-- Zotero -->
+      <a href="https://www.zotero.org/yourusername" target="_blank" rel="noopener" title="Zotero" aria-label="Zotero">
+        <i class="ai ai-zotero"></i>
+      </a>
+      <!-- RSS -->
+      <a href="/feed.xml" target="_blank" rel="noopener" title="RSS" aria-label="RSS">
+        <i class="ai ai-rss"></i>
+      </a>
     </div>
 
     <img src="6sigflgxu9z199koxpb5sv5cac3m.png" alt="Profile Image" class="header-image right">
