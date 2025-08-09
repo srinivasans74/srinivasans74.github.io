@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    /* ===== Reset & Base ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Open Sans', sans-serif;
@@ -19,6 +20,7 @@
       color: #333;
     }
 
+    /* ===== Navbar ===== */
     nav {
       background: #333;
       color: #fff;
@@ -36,6 +38,7 @@
     }
     nav a:hover { color: #00aaff; }
 
+    /* ===== Header (no blue bg) ===== */
     header {
       height: 30vh;
       min-height: 260px;
@@ -64,6 +67,7 @@
       100% { color: #2e7d32; }
     }
 
+    /* Snowfall overlay */
     .snowfall {
       position: absolute; inset: 0;
       pointer-events: none; overflow: hidden; z-index: 1;
@@ -80,44 +84,59 @@
       from { transform: translateY(-100px); }
       to   { transform: translateY(calc(100vh + 100px)); }
     }
+    .snowflake:nth-child(1){ width:10px; height:10px; animation-duration:5s; animation-delay:0s; }
+    .snowflake:nth-child(2){ width:15px; height:15px; animation-duration:6s; animation-delay:2s; }
+    .snowflake:nth-child(3){ width:20px; height:20px; animation-duration:7s; animation-delay:2s; }
 
+    /* Profile images */
     .header-image {
       position: absolute; width: 120px; height: auto; border-radius: 50%; z-index: 2;
     }
     .header-image.left  { top: 30px; left: 30px; }
     .header-image.right { top: 30px; right:30px; }
 
-    /* Social icons only */
+    /* ===== Social Icons (solid black tiles) ===== */
     .social-links {
       display: flex;
-      gap: 18px;
+      gap: 14px;
       justify-content: center;
       align-items: center;
       margin-top: 14px;
-      z-index: 3;
+      z-index: 3;           /* above snowfall */
       flex-wrap: wrap;
     }
     .social-links a {
-      font-size: 28px;
-      color: #000;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px; height: 60px;           /* tile size */
+      border-radius: 10px;                  /* squircle */
+      background: #000;                     /* black tile */
+      color: #fff;                          /* white glyph */
+      font-size: 22px;                      /* icon size for <i> */
       text-decoration: none;
-      transition: transform .15s ease, color .15s ease;
+      transition: transform .15s ease, background .15s ease, color .15s ease, outline .15s ease;
     }
     .social-links a:hover {
       transform: translateY(-2px);
-      color: #1565c0;
-    }
-    .social-links img {
-      width: 28px;
-      height: 28px;
-      object-fit: contain;
-      transition: transform .15s ease, filter .15s ease;
-    }
-    .social-links a:hover img {
-      transform: translateY(-2px);
-      filter: brightness(0.6);
+      background: #fff;                     /* invert */
+      color: #000;
+      outline: 2px solid #000;
+      outline-offset: -2px;
     }
 
+    /* Custom image icons inside tiles */
+    .social-links a img {
+      width: 60px; height: 60px;            /* image size inside tile */
+      object-fit: contain;
+      filter: invert(1);                    /* show as white on black */
+      transition: filter .15s ease;
+    }
+    .social-links a:hover img {
+      filter: invert(0);                    /* become dark on white */
+    }
+
+    /* ===== Main sections ===== */
     main { padding: 2rem; margin: auto; max-width: 1200px; }
     section {
       margin-bottom: 3rem;
@@ -128,11 +147,20 @@
     }
     section h2 { font-size: 2rem; margin-bottom: 1rem; }
 
+    /* ===== Footer ===== */
     footer {
       text-align: center;
       padding: 1rem;
       background: #333;
       color: #fff;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 560px) {
+      .header-image.left, .header-image.right { display: none; }
+      header h1 { font-size: 1.7rem; }
+      .social-links a { width: 42px; height: 42px; }
+      .social-links a img { width: 20px; height: 20px; }
     }
   </style>
 </head>
@@ -154,19 +182,49 @@
 
     <h1>Srinivasan Subramaniyan</h1>
 
+    <!-- Icon row -->
     <div class="social-links" aria-label="Profile links">
-      <a href="mailto:subramaniyan.4@osu.edu" title="Email"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" title="ORCID">
-        <img src="logs/orcid.png" alt="ORCID icon">
+      <!-- Email
+      <a href="mailto:subramaniyan.4@osu.edu" title="Email" aria-label="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a> -->
+
+      <!-- ORCID (your custom image in logs/) -->
+      <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener"
+         title="ORCID" aria-label="ORCID">
+        <img src="icons/ORCID_iD.svg" alt="ORCID icon">
       </a>
-      <a href="https://scholar.google.com/citations?user=luGswuwAAAAJ" target="_blank" title="Google Scholar">
-        <img src="logs/google-scholar.png" alt="Google Scholar icon">
+
+      <!-- Google Scholar (your custom image in logs/) -->
+      <a href="https://scholar.google.com/citations?user=luGswuwAAAAJ" target="_blank" rel="noopener"
+         title="Google Scholar" aria-label="Google Scholar">
+        <img src="icons/Academicons-Team-Academicons-Google-scholar.1024.png" alt="Google Scholar icon">
       </a>
-      <a href="https://www.researchgate.net/profile/Your-Profile" target="_blank" title="ResearchGate"><i class="ai ai-researchgate"></i></a>
-      <a href="https://github.com/yourusername" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/srinivasan-subramaniyan22/" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      <a href="https://www.zotero.org/yourusername" target="_blank" title="Zotero"><i class="ai ai-zotero"></i></a>
-      <a href="/feed.xml" target="_blank" title="RSS"><i class="ai ai-rss"></i></a>
+
+      <!-- ResearchGate (font icon)
+      <a href="https://www.researchgate.net/profile/Your-Profile" target="_blank" rel="noopener"
+         title="ResearchGate" aria-label="ResearchGate">
+        <i class="ai ai-researchgate"></i>
+      </a>
+      -->
+      <!-- GitHub (font icon) -->
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener"
+         title="GitHub" aria-label="GitHub">
+        <img src="icons/github-svgrepo-com.svg" alt="GitHub icon">
+      </a>
+
+      <!-- LinkedIn (font icon) -->
+      <a href="https://www.linkedin.com/in/srinivasan-subramaniyan22/" target="_blank" rel="noopener"
+         title="LinkedIn" aria-label="LinkedIn">
+        <img src="icons/linkedin-circle-svgrepo-com.svg" alt="LinkedIn icon">
+      </a>
+
+      <!-- Zotero (font icon) 
+      <a href="https://www.zotero.org/yourusername" target="_blank" rel="noopener"
+         title="Zotero" aria-label="Zotero">
+        <i class="ai ai-zotero"></i>
+      </a>
+       -->
     </div>
 
     <img src="6sigflgxu9z199koxpb5sv5cac3m.png" alt="Profile Image" class="header-image right">
@@ -195,6 +253,7 @@
     <p>&copy; 2025 Srinivasan Subramaniyan</p>
   </footer>
 
+  <!-- Snow script -->
   <script>
     function createSnowflakes() {
       const snowfallContainer = document.querySelector('.snowfall');
