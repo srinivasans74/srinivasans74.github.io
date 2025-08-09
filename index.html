@@ -38,7 +38,7 @@
     }
     nav a:hover { color: #00aaff; }
 
-    /* ===== Header (no blue bg) ===== */
+    /* ===== Header ===== */
     header {
       height: 30vh;
       min-height: 260px;
@@ -95,46 +95,43 @@
     .header-image.left  { top: 30px; left: 30px; }
     .header-image.right { top: 30px; right:30px; }
 
-    /* ===== Social Icons (solid black tiles) ===== */
+    /* ===== Social Icons (icons only, no boxes) ===== */
     .social-links {
       display: flex;
-      gap: 14px;
+      gap: 22px;                 /* spacing between icons */
       justify-content: center;
       align-items: center;
-      margin-top: 14px;
-      z-index: 3;           /* above snowfall */
+      margin-top: 16px;
+      z-index: 3;                /* above snowfall */
       flex-wrap: wrap;
     }
-    /*
+    /* Font-based icons (FA, Academicons) */
     .social-links a {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      width: 60px; height: 60px;          
-      border-radius: 10px;                 
-      background: #000;                     
-      color: #fff;                          
+      color: #000;               /* icon color for font icons */
       text-decoration: none;
-      transition: transform .15s ease, background .15s ease, color .15s ease, outline .15s ease;
+      line-height: 1;
+      transition: transform .15s ease, color .15s ease, opacity .15s ease;
     }
-    */
+    .social-links i {            /* size for font icons */
+      font-size: 36px;
+      display: inline-block;
+    }
+    /* Image icons (your PNG/SVGs) */
+    .social-links img {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      display: inline-block;
+      /* IMPORTANT: no filters or backgrounds so originals show cleanly */
+      filter: none;
+    }
+    /* Hover behavior (lift + tint for font icons, subtle dim for images) */
     .social-links a:hover {
       transform: translateY(-2px);
-      background: #fff;                     /* invert */
-      color: #000;
-      outline: 2px solid #000;
-      outline-offset: -2px;
-    }
-
-    /* Custom image icons inside tiles */
-    .social-links a img {
-      width: 60px; height: 60px;            /* image size inside tile */
-      object-fit: contain;
-      filter: invert(1);                    /* show as white on black */
-      transition: filter .15s ease;
+      color: #1565c0;           /* affects only font icons */
     }
     .social-links a:hover img {
-      filter: invert(0);                    /* become dark on white */
+      opacity: .7;              /* subtle feedback for image icons */
     }
 
     /* ===== Main sections ===== */
@@ -160,8 +157,8 @@
     @media (max-width: 560px) {
       .header-image.left, .header-image.right { display: none; }
       header h1 { font-size: 1.7rem; }
-      .social-links a { width: 42px; height: 42px; }
-      .social-links a img { width: 20px; height: 20px; }
+      .social-links i { font-size: 30px; }
+      .social-links img { width: 30px; height: 30px; }
     }
   </style>
 </head>
@@ -183,49 +180,40 @@
 
     <h1>Srinivasan Subramaniyan</h1>
 
-    <!-- Icon row -->
+    <!-- Icon row (icons only, no boxes) -->
     <div class="social-links" aria-label="Profile links">
-      <!-- Email
-      <a href="mailto:subramaniyan.4@osu.edu" title="Email" aria-label="Email">
-        <i class="fa-solid fa-envelope"></i>
-      </a> -->
-
-      <!-- ORCID (your custom image in logs/) -->
-      <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener"
-         title="ORCID" aria-label="ORCID">
+      <!-- ORCID (your image) -->
+      <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID">
         <img src="icons/ORCID_iD.svg" alt="ORCID icon">
       </a>
 
-      <!-- Google Scholar (your custom image in logs/) -->
-      <a href="https://scholar.google.com/citations?user=luGswuwAAAAJ" target="_blank" rel="noopener"
-         title="Google Scholar" aria-label="Google Scholar">
+      <!-- Google Scholar (your image) -->
+      <a href="https://scholar.google.com/citations?user=luGswuwAAAAJ" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar">
         <img src="icons/Academicons-Team-Academicons-Google-scholar.1024.png" alt="Google Scholar icon">
       </a>
 
-      <!-- ResearchGate (font icon)
-      <a href="https://www.researchgate.net/profile/Your-Profile" target="_blank" rel="noopener"
-         title="ResearchGate" aria-label="ResearchGate">
-        <i class="ai ai-researchgate"></i>
-      </a>
-      -->
       <!-- GitHub (font icon) -->
-      <a href="https://github.com/yourusername" target="_blank" rel="noopener"
-         title="GitHub" aria-label="GitHub">
-        <img src="icons/github-svgrepo-com.svg" alt="GitHub icon">
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
       </a>
 
-      <!-- LinkedIn (font icon) -->
-      <a href="https://www.linkedin.com/in/srinivasan-subramaniyan22/" target="_blank" rel="noopener"
-         title="LinkedIn" aria-label="LinkedIn">
+      <!-- LinkedIn (your image OR font icon). Using your image here: -->
+      <a href="https://www.linkedin.com/in/srinivasan-subramaniyan22/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
         <img src="icons/linkedin-circle-svgrepo-com.svg" alt="LinkedIn icon">
       </a>
 
-      <!-- Zotero (font icon) 
-      <a href="https://www.zotero.org/yourusername" target="_blank" rel="noopener"
-         title="Zotero" aria-label="Zotero">
+      <!-- (Optional) add more: ResearchGate / Zotero / RSS, etc. -->
+      <!--
+      <a href="https://www.researchgate.net/profile/Your-Profile" target="_blank" rel="noopener" title="ResearchGate" aria-label="ResearchGate">
+        <i class="ai ai-researchgate"></i>
+      </a>
+      <a href="https://www.zotero.org/yourusername" target="_blank" rel="noopener" title="Zotero" aria-label="Zotero">
         <i class="ai ai-zotero"></i>
       </a>
-       -->
+      <a href="/feed.xml" target="_blank" rel="noopener" title="RSS" aria-label="RSS">
+        <i class="ai ai-rss"></i>
+      </a>
+      -->
     </div>
 
     <img src="6sigflgxu9z199koxpb5sv5cac3m.png" alt="Profile Image" class="header-image right">
