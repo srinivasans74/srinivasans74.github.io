@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full-time Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    /* Navigation Styles */
+    nav {
+      background: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+    }
+
+    /* Layout Table Styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    #tlayout {
+      width: 100%;
+    }
+
+    #layout-menu {
+      background: #f4f4f4;
+      padding: 1rem;
+      width: 20%;
+      vertical-align: top;
+      border-right: 1px solid #ddd;
+    }
+
+    #layout-content {
+      padding: 1rem;
+      width: 80%;
+    }
+
+    .menu-category {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .menu-item {
+      margin-bottom: 0.5rem;
+    }
+
+    .menu-item a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    .menu-item a.current {
+      font-weight: 700;
+      color: #00aaff;
+    }
+
+    .menu-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Heading Styles */
+    h1 {
+      font-size: 2rem;
+      color: #003366;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    /* List Styles */
+    ol {
+      list-style-type: decimal;
+      padding-left: 20px;
+      margin-bottom: 1rem;
+    }
+
+    ol li {
+      margin-bottom: 0.5rem;
+    }
+
+    ol li p {
+      margin-bottom: 0;
+    }
+
+    .cventry {
+      margin-bottom: 20px;
+    }
+
+    .cventry h4 {
+      margin-bottom: 5px;
+      font-size: 1.25rem;
+    }
+
+    .cventry p {
+      margin-bottom: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+   <!-- <a href="CV_January21 (1).pdf">CV</a> -->
+     <!--  <a href="https://www.linkedin.com/in/srinivasan-subramaniyan22/">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=luGswuwAAAAJ&hl=en&oi=ao">Google Scholar</a>
+    <a href="Academics.html" class="current">Academics</a>
+    <a href="publications.html">Publications</a>
+    <a href="awards.html">Awards</a>
+    <a href="fulltime.html">Work Experience</a>
+  -->
+  </nav>
+
+  <div id="layout-content">
+    <h1>Industrial Experience</h1>
+
+    <div class="cventry">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <div>
+          <h2>
+            <a href="https://amd.com/" style="color:blue; text-decoration:none;">AMD</a>
+          </h2>
+        </div>
+        <div>
+          <p>Austin, US</p>
+        </div>
+      </div>
+      <p style="margin-bottom: 10px;">Research Intern - May 2022 - Aug 2022</p>
+      <ol>
+        <li>Optimized the scheduling of GP-GPU kernels to accelerate graph-based applications, enhancing performance and efficiency.</li>
+        <li>Developed and implemented the CPD-ALS framework for efficient tensor decomposition, improving computational throughput.</li>
+        <li>Conducted in-depth analysis to identify performance bottlenecks in GPU execution for graph applications.</li>
+        <li>Discovered optimization strategies for matrix multiplications involving tall and wide matrices, significantly boosting overall performance.</li>
+      </ol>
+    </div>
+
+    <div class="cventry">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+        <div>
+          <h2>
+            <a href="https://chips.pes.edu/" style="color:blue; text-decoration:none;">Centre for Heterogeneous and Intelligent Processing Systems</a>
+          </h2>
+        </div>
+        <div>
+          <p>Bangalore, IND</p>
+        </div>
+      </div>
+      <p style="margin-bottom: 10px;">Junior Research Fellow - Jan 2019 - Aug 2021</p>
+      <ol>
+        <li>Conducted design space exploration for NB-LDPC codes on FPGAs.</li>
+        <li>Developed accelerators for sparse matrix multiplication.</li>
+        <li>Appointed as a Visiting Research Fellow at the Instituto de Telecomunicações, University of Coimbra, from March 2021 to June 30th.</li>
+      </ol>
+    </div>
+
+    <h1>Teaching Assistantship at OSU</h1>
+    <ol>
+      <li>ECE 2060 Introduction to Digital Logic (Spring 2022)</li>
+      <li>ECE 2060 Introduction to Digital Logic (Fall 2022)</li>
+      <li>ECE 2060 Introduction to Digital Logic (Spring 2023)</li>
+      <li>ECE 2060 Introduction to Digital Logic Lab (Spring 2024)</li>
+    </ol>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Srinivasan Subramaniyan</p>
+  </footer>
+</body>
+</html>
