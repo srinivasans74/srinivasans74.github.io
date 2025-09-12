@@ -8,19 +8,24 @@
   <style>
     body {
       font-family: 'Open Sans', sans-serif;
-      line-height: 1.6;
+      line-height: 1.8;
+      font-size: 18px;
       background-color: #ffffff;
       color: #333;
     }
+
+    /* Header / Navigation */
     nav {
-      background: #333;
+      background: #000000;
       color: white;
-      padding: 1rem;
+      padding: 1.2rem;
       text-align: center;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
+
     nav a {
       color: white;
       margin: 0 15px;
@@ -28,14 +33,23 @@
       font-weight: 700;
     }
     nav a:hover { color: #00aaff; }
-    h1, h2 { font-weight: 700; margin-bottom: 1rem; }
-    h1 { font-size: 2rem; color: #003366; }
-    h2 { font-size: 1.5rem; margin-top: 1.5rem; }
+
+    /* Headings */
+    h1, h2 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    h1 { font-size: 2.2rem; color: #003366; }
+    h2 { font-size: 1.6rem; margin-top: 1.5rem; }
+
+    /* Lists */
     ol { list-style-type: decimal; padding-left: 1.5rem; }
     ol li { margin-bottom: 1rem; }
+
+    /* Buttons */
     .filter-buttons { margin-bottom: 1rem; }
     .filter-buttons button {
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       margin-right: 0.5rem;
       border: none;
       border-radius: 5px;
@@ -46,10 +60,23 @@
       transition: background-color 0.3s ease;
     }
     .filter-buttons button.active { background-color: #00509e; }
-    .hidden { display: none; }
-    footer { text-align: center; padding: 1rem; background: #333; color: white; }
+
+    /* Links inside content */
     #content a { color: blue; text-decoration: none; }
     #content a:hover { color: darkblue; text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      background: #000000;
+      color: white;
+      text-align: center;
+      padding: 1.2rem;
+      margin-top: 2rem;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
+    }
+
+    /* Hidden by default */
+    .hidden { display: none; }
   </style>
 </head>
 <body>
