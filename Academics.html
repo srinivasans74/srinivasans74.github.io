@@ -6,149 +6,104 @@
   <title>Academics</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --text: #333;
+      --brand: #003366;
+      --header-bg: #000000;
+      --container-max: 1100px;
     }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Open Sans', sans-serif;
-      line-height: 1.6;
-      background-color: #f4f4f4;
-      color: #333;
+      font-size: 18px;           /* larger readable base size */
+      line-height: 1.8;
+      background: #ffffff;
+      color: var(--text);
     }
 
-    /* Navigation Styles */
+    /* Layout container */
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Navigation */
     nav {
-      background: #333;
-      color: white;
-      padding: 1rem;
+      background: var(--header-bg);
+      color: #fff;
+      padding: 1.2rem;
       text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
-
     nav a {
-      color: white;
-      margin: 0 15px;
+      color: #fff;
+      margin: 0 12px;
       text-decoration: none;
       font-weight: 700;
     }
+    nav a:hover { color: #00aaff; }
 
-    nav a:hover {
-      color: #00aaff;
-    }
-
-    /* Layout Table Styles */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    #tlayout {
-      width: 100%;
-    }
-
-    #layout-menu {
-      background: #f4f4f4;
-      padding: 1rem;
-      width: 20%;
-      vertical-align: top;
-      border-right: 1px solid #ddd;
-    }
-
-    #layout-content {
-      padding: 1rem;
-      width: 80%;
-    }
-
-    .menu-category {
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .menu-item {
-      margin-bottom: 0.5rem;
-    }
-
-    .menu-item a {
-      color: #333;
-      text-decoration: none;
-    }
-
-    .menu-item a.current {
-      font-weight: 700;
-      color: #00aaff;
-    }
-
-    .menu-item a:hover {
-      text-decoration: underline;
-    }
-
-    /* Heading Styles */
-    h1, h2 {
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
+    /* Headings */
+    #toptitle { margin: 1.5rem 0; }
     h1 {
-      font-size: 2rem;
-      color: #003366;
+      font-size: 2.2rem;
+      color: var(--brand);
+      font-weight: 700;
     }
-
     h2 {
-      font-size: 1.5rem;
-      margin-top: 1.5rem;
+      font-size: 1.6rem;
+      margin: 1.5rem 0 0.75rem;
+      font-weight: 700;
     }
 
-    /* List Styles */
-    ul {
-      list-style-type: disc;
-      margin-left: 1.5rem;
-      margin-bottom: 1rem;
-    }
+    /* Lists */
+    ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.2rem; }
+    ul li { margin-bottom: 0.6rem; }
+    ul li p { margin: 0; }
 
-    ul li {
-      margin-bottom: 0.5rem;
-    }
-
-    ul li p {
-      margin-bottom: 0;
-    }
-
-    /* Footer Styles */
+    /* Footer */
     footer {
+      background: var(--header-bg);
+      color: #fff;
       text-align: center;
-      padding: 1rem;
-      background: #333;
-      color: white;
+      padding: 1.2rem;
+      margin-top: 2rem;
+      box-shadow: 0 -2px 6px rgba(0,0,0,0.25);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      body { font-size: 16px; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.4rem; }
+      nav a { margin: 0 8px; }
+    }
+
+    @media (max-width: 480px) {
+      body { font-size: 15px; }
+      nav { padding: 1rem; }
+      h1 { font-size: 1.6rem; }
+      h2 { font-size: 1.2rem; }
     }
   </style>
 </head>
 <body>
   <nav>
     <a href="index.html">Home</a>
-   <!-- <a href="CV_January21 (1).pdf">CV</a> -->
-     <!--  <a href="https://www.linkedin.com/in/srinivasan-subramaniyan22/">LinkedIn</a>
-    <a href="https://scholar.google.com/citations?user=luGswuwAAAAJ&hl=en&oi=ao">Google Scholar</a>
-    <a href="Academics.html" class="current">Academics</a>
-    <a href="publications.html">Publications</a>
-    <a href="awards.html">Awards</a>
-    <a href="fulltime.html">Work Experience</a>
-  -->
   </nav>
 
-  <div id="layout-content">
+  <main class="container">
     <div id="toptitle">
       <h1>Academics</h1>
     </div>
 
-    <h2>Integrated MS+PhD - The Ohio State University [Aug 21 - Present]</h2>
+    <h2>Integrated MS+PhD – The Ohio State University [Aug 2021 – Present]</h2>
     <ul>
       <li>
         <p>I have taken the following courses:</p>
@@ -183,7 +138,7 @@
       <li><p>Smart Music Reactive LED Strip</p></li>
       <li><p>LNPG: Leaking Neural Network Secrets through Power Side-channel in GPUs</p></li>
     </ul>
-  </div>
+  </main>
 
   <footer>
     <p>&copy; 2024 Srinivasan Subramaniyan</p>
