@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Srinivasan Subramaniyan</title>
+  <title>Publications</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* General Reset */
@@ -16,11 +16,11 @@
     body {
       font-family: 'Open Sans', sans-serif;
       line-height: 1.6;
-      background-color: #f4f4f4;
+      background-color: #ffffff;
       color: #333;
     }
 
-    /* Navbar Styles */
+    /* Navigation Styles */
     nav {
       background: #333;
       color: white;
@@ -42,114 +42,108 @@
       color: #00aaff;
     }
 
-    /* Header Styles */
-    header {
-      height: 30vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      color: white;
-      overflow: hidden;
-    }
-
-    header h1 {
-      font-size: 2rem; /* Smaller size for the header text */
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-      animation: flashingColors 5s infinite;
-      z-index: 2;
-      position: relative;
-    }
-
-    @keyframes flashingColors {
-      0% { color: #FF6347; }
-      25% { color: #1E90FF; }
-      50% { color: #32CD32; }
-      75% { color: #FFD700; }
-      100% { color: #FF6347; }
-    }
-
-    /* Snowfall Animation */
-    .snowfall {
-      position: absolute;
-      top: 0;
-      left: 0;
+    /* Layout Table Styles */
+    table {
       width: 100%;
-      height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 1;
-      background: rgba(0, 0, 0, 0.3); /* Slightly transparent background */
+      border-collapse: collapse;
     }
 
-    .snowflake {
-      position: absolute;
-      background: white;
-      border-radius: 50%;
-      opacity: 0.8;
-      pointer-events: none;
-      animation: snowfall linear infinite;
+    #tlayout {
+      width: 100%;
     }
 
-    @keyframes snowfall {
-      from {
-        transform: translateY(-100px);
-      }
-      to {
-        transform: translateY(calc(100vh + 100px));
-      }
+    #layout-menu {
+      background: #f4f4f4;
+      padding: 1rem;
+      width: 20%;
+      vertical-align: top;
+      border-right: 1px solid #ddd;
     }
 
-    /* Snowflake Sizes */
-    .snowflake:nth-child(1) { width: 10px; height: 10px; animation-duration: 5s; animation-delay: 0s; }
-    .snowflake:nth-child(2) { width: 15px; height: 15px; animation-duration: 6s; animation-delay: 2s; }
-    .snowflake:nth-child(3) { width: 20px; height: 20px; animation-duration: 7s; animation-delay: 2s; }
-
-    /* Main Section Styles */
-    main {
-      padding: 2rem;
-      margin: auto;
-      max-width: 1200px;
+    #layout-content {
+      padding: 1rem;
+      width: 80%;
     }
 
-    section {
-      margin-bottom: 3rem;
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    .menu-category {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #ddd;
     }
 
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    section ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    section ul li {
+    .menu-item {
       margin-bottom: 0.5rem;
     }
 
-    /* Quote Section Styles */
-    #quotes-section {
-      background-color: #003366;
-      color: white;
-      padding: 2rem;
-      border-radius: 10px;
-      text-align: center;
-      margin-bottom: 3rem;
-      font-style: italic;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    .menu-item a {
+      color: #333;
+      text-decoration: none;
     }
 
-    #quotes-section p {
+    .menu-item a.current {
+      font-weight: 700;
+      color: #00aaff;
+    }
+
+    .menu-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Heading Styles */
+    h1, h2 {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #003366;
+    }
+
+    h2 {
       font-size: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    /* List Styles */
+    ol {
+      list-style-type: decimal;
+      padding-left: 1.5rem;
+    }
+
+    ol li {
+      margin-bottom: 1rem;
+    }
+
+    ol li p {
       margin-bottom: 0;
+    }
+
+    /* Button Styles */
+    .filter-buttons {
+      margin-bottom: 1rem;
+    }
+
+    .filter-buttons button {
+      padding: 0.5rem 1rem;
+      margin-right: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #003366;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .filter-buttons button.active {
+      background-color: #00509e;
+    }
+
+    /* Hidden by default */
+    .hidden {
+      display: none;
     }
 
     /* Footer Styles */
@@ -159,145 +153,150 @@
       background: #333;
       color: white;
     }
-
-    /* Video Player Styles */
-    #video-section {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      margin: 2rem 0;
+    #content a {
+      color: blue;
+      text-decoration: none;
     }
 
-    iframe {
-      flex: 1;
-      height: 250px;
-      border: none;
+    #content a:hover {
+      color: darkblue;
+      text-decoration: underline;
     }
-
-    /* Image Styles */
-    .header-image {
-      position: absolute;
-      width: 120px; /* Adjust width as needed */
-      height: auto;
-      border-radius: 50%;
-      z-index: 2;
-    }
-
-    .header-image.left {
-      top: 30px;
-      left: 30px;
-    }
-
-    .header-image.right {
-      top: 30px;
-      right:30px;
-    }
-
   </style>
 </head>
 <body>
-
   <nav>
-    <a href="#aboutme">About Me</a>
-    <a href="publications.html">Publications</a>
-    <a href="Academics.html">Education</a>
-    <a href="CV_January21 (1).pdf" target="_blank">CV</a>
-    <a href="fulltime.html">Experience</a>
-    <a href="awards.html">Awards</a>
-    <a href="https://www.linkedin.com/in/srinivasan-subramaniyan22/" target="_blank">LinkedIn</a>
-    <a href="https://scholar.google.com/citations?user=luGswuwAAAAJ&hl=en&oi=ao" target="_blank">Google Scholar</a>
+    <a href="index.html">Home</a>
   </nav>
 
-  <header>
-    <div class="snowfall">
-      <!-- Snowflakes dynamically generated in JavaScript -->
+  <div id="layout-content">
+    <div class="filter-buttons">
+      <button id="by-year-btn" onclick="filterPublications('by-year')">By Year</button>
+      <button id="by-type-btn" onclick="filterPublications('by-type')">By Type</button>
     </div>
-    <img src="6sigflgxu9z199koxpb5sv5cac3m.png" alt="Profile Image" class="header-image left">
-    <h1>Srinivasan Subramaniyan</h1>
-    <img src="6sigflgxu9z199koxpb5sv5cac3m.png" alt="Profile Image" class="header-image right">
-  </header>
+    
+    <div id="toptitle">
+      <h1>Publications</h1>
+    </div>
 
-  <main>
-    <!-- About Me Section -->
-    <section id="aboutme">
-      <h2>About Me</h2>
-      <p>
-        I am a fourth-year PhD student in the Electrical and Computer Engineering Department at Ohio State University. I am pursuing my PhD under the supervision of Dr. Xiaorui Wang. My main research interests are in Embedded and Real-time Systems, Data Center Computing, Computer Architecture, and Cyber-Physical Systems.
-      </p>
-    </section>
+    <div id="content">
+      <!-- By Year Section -->
+      <div id="by-year">
+        <h2> 2025</h2>
+         <ol>
+          <li><u>Srinivasan Subramaniyan</u> and Xiaorui Wang. "Exploiting ML Task Correlation in the Minimization of Capital Expense for GPU Data Centers" 44th IEEE -- International Performance Computing and Communications Conference (IPCCC) 2025 </li>
+          <li><u>Srinivasan Subramaniyan</u> and Xiaorui Wang. "FC-GPU: Feedback Control GPU Scheduling for Real-time Embedded Systems" Embedded Systems Week – International Conference on Embedded Software (EMSOFT) 2025.</li>
+          <li>Yuan Ma, <u>Srinivasan Subramaniyan</u>, and Xiaorui Wang."Power Capping of GPU Servers for Machine Learning Inference Optimization" 54th International Conference on Parallel Processing (ICPP) 2025 <a href="presentations/2025icpp_updated.pptx" target="_blank" rel="noopener noreferrer">[slides]</a>.</li>        
+        </ol>
 
-    <!-- Publications Section -->
-    <section id="publications">
-      <h2>Selected Publications</h2>
+        <h2>2024</h2>
+        <ol>
+         <li><p>Chen, Guoyu, <u>Srinivasan Subramaniyan</u>, and Xiaorui Wang. "Latency-Guaranteed Co-Location of Inference and Training for Reducing Data Center Expenses"  IEEE 44th International Conference on Distributed Computing Systems (ICDCS) 2024  <a href="presentations/icdcs24_v4.pptx" target="_blank" rel="noopener noreferrer">[slides]</a>. </p> </li>
+        </ol>
+
+        <h2>2023</h2>
+        <ol>
+          <li>
+            <p><u>Srinivasan Subramaniyan</u>, and Xiaorui Wang. "OptiCPD: Optimization For The Canonical Polyadic Decomposition Algorithm on GPUs." 2023 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW). IEEE, 2023.</p>
+          </li>
+        </ol>
+
+        <h2>2022</h2>
+        <ol>
+          <li>
+            <p> <u>Subramaniyan, Srinivasan </u>, Oscar Ferraz, M. R. Ashuthosh, Santosh Krishna, Guohui Wang, Joseph R. Cavallaro, Vitor Silva, Gabriel Falcao, and Madhura Purnaprajna. "Enabling High-Level Design Strategies for High-Throughput and Low-Power NB-LDPC Decoders." IEEE Des. Test 40, no. 1 (2023): 85-95.</p>
+          </li>
+          <li>
+            <p>Ashuthosh, M. R., Krishna, S., Sudarshan, V., <u>Subramaniyan, S </u>., & Purnaprajna, M. (2022, February). MAPPARAT: A Resource Constrained FPGA-Based Accelerator for Sparse-Dense Matrix Multiplication. In 2022 35th International Conference on VLSI Design and 2022 21st International Conference on Embedded Systems (VLSID) (pp. 102-107). IEEE.</p>
+          </li>
+        </ol>
+
+        <h2>2021</h2>
+        <ol>
+          <li>
+            <p>Ferraz, O., <u>Subramaniyan, S. </u>, Chinthalaa, R., Andrade, J., Cavallaro, J. R., Nandy, S. K., ... & Falcao, G. (2021). A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA, and GPU Architectures. IEEE Communications Surveys & Tutorials, 24(1), 524-556.</p>
+          </li>
+        </ol>
+
+        <h2>2020</h2>
+        <ol>
+          <li>
+            <p>Ferraz, O., <u>Subramaniyan, S </u>., Wang, G., Cavallaro, J. R., Falcao, G., & Purnaprajna, M. (2020, May). Gbit/s non-binary LDPC decoders: High-throughput using high-level specifications. In 2020 IEEE 28th Annual International Symposium on Field-Programmable Custom Computing Machines (FCCM) (pp. 226-226). IEEE.</p>
+          </li>
+          <li>
+            <p> <u>Subramaniyan, S</u>., Ferraz, O., Ashuthosh, M. R., Krishna, S., Wang, G., Cavallaro, J. R., ... & Purnaprajna, M. (2020, October). Pushing the limits of energy efficiency for non-binary LDPC decoders on GPUs and FPGAs. In 2020 IEEE Workshop on Signal Processing Systems (SiPS) (pp. 1-6). IEEE.</p>
+          </li>
+          <li>
+            <p>K. Vanishree, A. George, S. Gunisetty, <u>Subramaniyan, S </u>, S. Kashyap R., and M. Purnaprajna, "CoIn: Accelerated CNN Co-Inference through Data Partitioning on Heterogeneous Devices," 2020 6th International Conference on Advanced Computing and Communication Systems (ICACCS), 2020, pp. 90-95, doi: 10.1109/ICACCS48705.2020.9074444.</p>
+          </li>
+        </ol>
+      </div>
+
+      <!-- By Type Section -->
+      <div id="by-type" class="hidden">
+       <h2>Conference Papers</h2>
       <ol>
-        <li><u>Srinivasan Subramaniyan</u> and Xiaorui Wang. "FC-GPU: Feedback Control GPU Scheduling for Real-time Embedded Systems" Embedded Systems Week – International Conference on Embedded Software (EMSOFT) 2025.</li>
-        <li>Yuan Ma, <u>Srinivasan Subramaniyan</u>, and Xiaorui Wang. "Power Capping of GPU Servers for Machine Learning Inference Optimization" 54th International Conference on Parallel Processing (ICPP) 2025.</li>
-        <li>Chen, Guoyu, <u>Srinivasan Subramaniyan</u>, and Xiaorui Wang. "Latency-Guaranteed Co-Location of Inference and Training for Reducing Data Center Expenses" IEEE 44th International Conference on Distributed Computing Systems (ICDCS) 2024.</li>
+      <li><u>Srinivasan Subramaniyan</u> and Xiaorui Wang. "Exploiting ML Task Correlation in the Minimization of Capital Expense for GPU Data Centers" 44th IEEE -- International Performance Computing and Communications Conference (IPCCC) 2025 </li>
+      <li><u>Srinivasan Subramaniyan</u> and Xiaorui Wang. "FC-GPU: Feedback Control GPU Scheduling for Real-time Embedded Systems" Embedded Systems Week – International Conference on Embedded Software (EMSOFT) 2025.</li>
+      <li>Yuan Ma, <u>Srinivasan Subramaniyan</u>, and Xiaorui Wang."Power Capping of GPU Servers for Machine Learning Inference Optimization" 54th International Conference on Parallel Processing (ICPP) 2025 <a href="presentations/2025icpp_updated.pptx" target="_blank" rel="noopener noreferrer">[slides]</a>.</li>        
+      <li><p>Chen, Guoyu, <u>Srinivasan Subramaniyan</u>, and Xiaorui Wang. "Latency-Guaranteed Co-Location of Inference and Training for Reducing Data Center Expenses"  IEEE 44th International Conference on Distributed Computing Systems (ICDCS) 2024  <a href="presentations/icdcs24_v4.pptx" target="_blank" rel="noopener noreferrer">[slides]</a>. </p> </li>
+      <li>Ashuthosh, M. R., Krishna, S., Sudarshan, V., <u>Subramaniyan, S.</u>, & Purnaprajna, M. (2022, February). MAPPARAT: A Resource Constrained FPGA-Based Accelerator for Sparse-Dense Matrix Multiplication. In 2022 35th International Conference on VLSI Design and 2022 21st International Conference on Embedded Systems (VLSID) (pp. 102-107). IEEE.</li>
+      <li>K. Vanishree, A. George, S. Gunisetty, <u>Subramaniyan, S.</u>, S. Kashyap R., and M. Purnaprajna, "CoIn: Accelerated CNN Co-Inference through Data Partitioning on Heterogeneous Devices," 2020 6th International Conference on Advanced Computing and Communication Systems (ICACCS), 2020, pp. 90-95, doi: 10.1109/ICACCS48705.2020.9074444.</li>
       </ol>
-    </section>
 
+        <h2>Journal Papers</h2>
+        <ol>
+       <li>
+            <p><u>S. Subramaniyan</u> et al., "Enabling High-Level Design Strategies for High-Throughput and Low-Power NB-LDPC Decoders," in IEEE Design & Test, 2022, doi: 10.1109/MDAT.2022.3202852.</p>
+          </li>
+          <li>
+            <p>Ferraz, O., <u>Subramaniyan, S.</u>, Chinthalaa, R., Andrade, J., Cavallaro, J. R., Nandy, S. K., ... & Falcao, G. (2021). A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA, and GPU Architectures. IEEE Communications Surveys & Tutorials, 24(1), 524-556.</p>
+          </li>
+          <li>
+            <p><u>S. Subramaniyan</u> et al., "Pushing the Limits of Energy Efficiency for Non-Binary LDPC Decoders on GPUs and FPGAs," 2020 IEEE Workshop on Signal Processing Systems (SiPS), 2020, pp. 1-6, doi: 10.1109/SiPS50750.2020.9195258.</p>
+          </li>
+        </ol>
 
-
-    <!-- Quote Section
-    <div id="quotes-section">
-      <p id="quote-text">"The only way to do great work is to love what you do." - Steve Jobs</p>
-    </div> -->
-
-    <!-- Video Section -->
-  <!-- Video Section -->
-   <!--
-  <section id="my-motivational-videos">
-    <div id="video-section">
-      <iframe src="https://www.youtube.com/embed/5hFd6zGkxLE" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/pq-L5SqXn24" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/R0alThHNb0Y" allowfullscreen></iframe>
+        <h2>Workshop Papers</h2>
+        <ol>
+            <li>
+            <p><u>Subramaniyan, Srinivasan</u>, and Xiaorui Wang. "OptiCPD: Optimization For The Canonical Polyadic Decomposition Algorithm on GPUs." 2023 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW). IEEE, 2023.</p>
+          </li>
+          <li>
+            <p>Ferraz, O., <u>Subramaniyan, S.</u>, Wang, G., Cavallaro, J. R., Falcao, G., & Purnaprajna, M. (2020, May). Gbit/s non-binary LDPC decoders: High-throughput using high-level specifications. In 2020 IEEE 28th Annual International Symposium on Field-Programmable Custom Computing Machines (FCCM) (pp. 226-226). IEEE.</p>
+          </li>
+        </ol>
+      </div>
     </div>
-  </section>
-  -->
-  </main>
+  </div>
 
   <footer>
-    <p>Contact: subramaniyan [dot] 4 [at] osu [dot] edu</p>
-    <p>&copy; 2025 Srinivasan Subramaniyan</p>
+    <p>&copy; 2024 Srinivasan Subramaniyan</p>
   </footer>
 
-  <!-- <script>
-    // Array of quotes
-    const quotes = [
-      '"The only way to do great work is to love what you do." - Steve Jobs',
-      '"Success is not final, failure is not fatal: It is the courage to continue that counts." - Winston Churchill',
-      '"To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment." - Ralph Waldo Emerson'
-    ];
+  <script>
+    // Function to filter publications
+    function filterPublications(filter) {
+      const byYearBtn = document.getElementById('by-year-btn');
+      const byTypeBtn = document.getElementById('by-type-btn');
+      const byYearSection = document.getElementById('by-year');
+      const byTypeSection = document.getElementById('by-type');
 
-    // Function to update the quote every 4 seconds
-    function updateQuote() {
-      const quoteText = document.getElementById('quote-text');
-      let currentIndex = 0;
-
-      setInterval(() => {
-        quoteText.textContent = quotes[currentIndex];
-        currentIndex = (currentIndex + 1) % quotes.length;
-      }, 4000); // 4000 milliseconds = 4 seconds
+      if (filter === 'by-year') {
+        byYearBtn.classList.add('active');
+        byTypeBtn.classList.remove('active');
+        byYearSection.classList.remove('hidden');
+        byTypeSection.classList.add('hidden');
+      } else {
+        byTypeBtn.classList.add('active');
+        byYearBtn.classList.remove('active');
+        byTypeSection.classList.remove('hidden');
+        byYearSection.classList.add('hidden');
+      }
     }
 
-    // Initialize the quote rotation
-    updateQuote();
-
-    // Snowfall effect
-    function createSnowflakes() {
-      const snowfallContainer = document.querySelector('.snowfall');
-      for (let i = 0; i < 50; i++) {
-        const snowflake = document.createElement('div');
-        snowflake.classList.add('snowflake');
-        snowflake.style.left = Math.random() * 100 + 'vw';
-        snowflake.style.animationDuration = (Math.random() * 10 + 10) + 's';
-        snowflake.style.animationDelay = Math.random() * 10 + 's';
-        snowfallContainer.appendChild(snowflake);
-      }
-    } -->
-
-    <!--createSnowflakes(); -->
+    // Default to showing by-year section
+    filterPublications('by-year');
   </script>
-
 </body>
 </html>

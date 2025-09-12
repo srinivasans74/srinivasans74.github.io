@@ -6,21 +6,12 @@
   <title>Publications</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Open Sans', sans-serif;
       line-height: 1.6;
       background-color: #ffffff;
       color: #333;
     }
-
-    /* Navigation Styles */
     nav {
       background: #333;
       color: white;
@@ -30,101 +21,19 @@
       top: 0;
       z-index: 1000;
     }
-
     nav a {
       color: white;
       margin: 0 15px;
       text-decoration: none;
       font-weight: 700;
     }
-
-    nav a:hover {
-      color: #00aaff;
-    }
-
-    /* Layout Table Styles */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    #tlayout {
-      width: 100%;
-    }
-
-    #layout-menu {
-      background: #f4f4f4;
-      padding: 1rem;
-      width: 20%;
-      vertical-align: top;
-      border-right: 1px solid #ddd;
-    }
-
-    #layout-content {
-      padding: 1rem;
-      width: 80%;
-    }
-
-    .menu-category {
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid #ddd;
-    }
-
-    .menu-item {
-      margin-bottom: 0.5rem;
-    }
-
-    .menu-item a {
-      color: #333;
-      text-decoration: none;
-    }
-
-    .menu-item a.current {
-      font-weight: 700;
-      color: #00aaff;
-    }
-
-    .menu-item a:hover {
-      text-decoration: underline;
-    }
-
-    /* Heading Styles */
-    h1, h2 {
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 2rem;
-      color: #003366;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    /* List Styles */
-    ol {
-      list-style-type: decimal;
-      padding-left: 1.5rem;
-    }
-
-    ol li {
-      margin-bottom: 1rem;
-    }
-
-    ol li p {
-      margin-bottom: 0;
-    }
-
-    /* Button Styles */
-    .filter-buttons {
-      margin-bottom: 1rem;
-    }
-
+    nav a:hover { color: #00aaff; }
+    h1, h2 { font-weight: 700; margin-bottom: 1rem; }
+    h1 { font-size: 2rem; color: #003366; }
+    h2 { font-size: 1.5rem; margin-top: 1.5rem; }
+    ol { list-style-type: decimal; padding-left: 1.5rem; }
+    ol li { margin-bottom: 1rem; }
+    .filter-buttons { margin-bottom: 1rem; }
     .filter-buttons button {
       padding: 0.5rem 1rem;
       margin-right: 0.5rem;
@@ -136,45 +45,16 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-
-    .filter-buttons button.active {
-      background-color: #00509e;
-    }
-
-    /* Hidden by default */
-    .hidden {
-      display: none;
-    }
-
-    /* Footer Styles */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #333;
-      color: white;
-    }
-    #content a {
-      color: blue;
-      text-decoration: none;
-    }
-
-    #content a:hover {
-      color: darkblue;
-      text-decoration: underline;
-    }
+    .filter-buttons button.active { background-color: #00509e; }
+    .hidden { display: none; }
+    footer { text-align: center; padding: 1rem; background: #333; color: white; }
+    #content a { color: blue; text-decoration: none; }
+    #content a:hover { color: darkblue; text-decoration: underline; }
   </style>
 </head>
 <body>
   <nav>
     <a href="index.html">Home</a>
-   <!-- <a href="CV_January21 (1).pdf">CV</a> -->
-     <!--  <a href="https://www.linkedin.com/in/srinivasan-subramaniyan22/">LinkedIn</a>
-    <a href="https://scholar.google.com/citations?user=luGswuwAAAAJ&hl=en&oi=ao">Google Scholar</a>
-    <a href="Academics.html" class="current">Academics</a>
-    <a href="publications.html">Publications</a>
-    <a href="awards.html">Awards</a>
-    <a href="fulltime.html">Work Experience</a>
-  -->
   </nav>
 
   <div id="layout-content">
@@ -190,89 +70,39 @@
     <div id="content">
       <!-- By Year Section -->
       <div id="by-year">
-        <h2> 2025</h2>
-         <ol>
-          <li><u>Srinivasan Subramaniyan</u> and Xiaorui Wang. "Exploiting ML Task Correlation in the Minimization of Capital Expense for GPU Data Centers" 44th IEEE -- International Performance Computing and Communications Conference (IPCCC) 2025 </li>
-          <li><u>Srinivasan Subramaniyan</u> and Xiaorui Wang. "FC-GPU: Feedback Control GPU Scheduling for Real-time Embedded Systems" Embedded Systems Week – International Conference on Embedded Software (EMSOFT) 2025.</li>
-          <li>Yuan Ma, <u>Srinivasan Subramaniyan</u>, and Xiaorui Wang."Power Capping of GPU Servers for Machine Learning Inference Optimization" 54th International Conference on Parallel Processing (ICPP) 2025 <a href="presentations/2025icpp_updated.pptx" target="_blank" rel="noopener noreferrer">[slides]</a>.</li>        
+        <h2>2025</h2>
+        <ol>
+          <li><u>Srinivasan Subramaniyan</u> and Xiaorui Wang. "Exploiting ML Task Correlation in the Minimization of Capital Expense for GPU Data Centers." IPCCC, 2025. [<a href="#">Paper</a> | <a href="#">Slides</a>]</li>
+          <li><u>Srinivasan Subramaniyan</u> and Xiaorui Wang. "FC-GPU: Feedback Control GPU Scheduling for Real-time Embedded Systems." EMSOFT, 2025. [<a href="#">Paper</a> | <a href="#">Slides</a>]</li>
+          <li>Yuan Ma, <u>Srinivasan Subramaniyan</u>, and Xiaorui Wang. "Power Capping of GPU Servers for Machine Learning Inference Optimization." ICPP, 2025. [<a href="#">Paper</a> | <a href="presentations/2025icpp_updated.pptx" target="_blank" rel="noopener noreferrer">Slides</a>]</li>
         </ol>
 
         <h2>2024</h2>
         <ol>
-         <li><p>Chen, Guoyu, <u>Srinivasan Subramaniyan</u>, and Xiaorui Wang. "Latency-Guaranteed Co-Location of Inference and Training for Reducing Data Center Expenses"  IEEE 44th International Conference on Distributed Computing Systems (ICDCS) 2024  <a href="presentations/icdcs24_v4.pptx" target="_blank" rel="noopener noreferrer">[slides]</a>. </p> </li>
+          <li>Chen, Guoyu, <u>Srinivasan Subramaniyan</u>, and Xiaorui Wang. "Latency-Guaranteed Co-Location of Inference and Training for Reducing Data Center Expenses." ICDCS, 2024. [<a href="#">Paper</a> | <a href="presentations/icdcs24_v4.pptx" target="_blank" rel="noopener noreferrer">Slides</a>]</li>
         </ol>
 
         <h2>2023</h2>
         <ol>
-          <li>
-            <p><u>Srinivasan Subramaniyan</u>, and Xiaorui Wang. "OptiCPD: Optimization For The Canonical Polyadic Decomposition Algorithm on GPUs." 2023 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW). IEEE, 2023.</p>
-          </li>
+          <li><u>Srinivasan Subramaniyan</u> and Xiaorui Wang. "OptiCPD: Optimization For The Canonical Polyadic Decomposition Algorithm on GPUs." IPDPSW, 2023. [<a href="#">Paper</a> | <a href="#">Slides</a>]</li>
         </ol>
 
         <h2>2022</h2>
         <ol>
-          <li>
-            <p> <u>Subramaniyan, Srinivasan </u>, Oscar Ferraz, M. R. Ashuthosh, Santosh Krishna, Guohui Wang, Joseph R. Cavallaro, Vitor Silva, Gabriel Falcao, and Madhura Purnaprajna. "Enabling High-Level Design Strategies for High-Throughput and Low-Power NB-LDPC Decoders." IEEE Des. Test 40, no. 1 (2023): 85-95.</p>
-          </li>
-          <li>
-            <p>Ashuthosh, M. R., Krishna, S., Sudarshan, V., <u>Subramaniyan, S </u>., & Purnaprajna, M. (2022, February). MAPPARAT: A Resource Constrained FPGA-Based Accelerator for Sparse-Dense Matrix Multiplication. In 2022 35th International Conference on VLSI Design and 2022 21st International Conference on Embedded Systems (VLSID) (pp. 102-107). IEEE.</p>
-          </li>
+          <li><u>Srinivasan Subramaniyan</u>, O. Ferraz, M. R. Ashuthosh, S. Krishna, G. Wang, J. Cavallaro, V. Silva, G. Falcao, and M. Purnaprajna. "Enabling High-Level Design Strategies for High-Throughput and Low-Power NB-LDPC Decoders." IEEE Design & Test, 2022. [<a href="#">Paper</a>]</li>
+          <li>M. R. Ashuthosh, S. Krishna, V. Sudarshan, <u>S. Subramaniyan</u>, & M. Purnaprajna. "MAPPARAT: A Resource Constrained FPGA-Based Accelerator for Sparse-Dense Matrix Multiplication." VLSID, 2022. [<a href="#">Paper</a> | <a href="#">Slides</a>]</li>
         </ol>
 
         <h2>2021</h2>
         <ol>
-          <li>
-            <p>Ferraz, O., <u>Subramaniyan, S. </u>, Chinthalaa, R., Andrade, J., Cavallaro, J. R., Nandy, S. K., ... & Falcao, G. (2021). A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA, and GPU Architectures. IEEE Communications Surveys & Tutorials, 24(1), 524-556.</p>
-          </li>
+          <li>O. Ferraz, <u>S. Subramaniyan</u>, R. Chinthalaa, J. Andrade, J. Cavallaro, S. Nandy, ... & G. Falcao. "A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA, and GPU Architectures." IEEE Communications Surveys & Tutorials, 2021. [<a href="#">Paper</a>]</li>
         </ol>
 
         <h2>2020</h2>
         <ol>
-          <li>
-            <p>Ferraz, O., <u>Subramaniyan, S </u>., Wang, G., Cavallaro, J. R., Falcao, G., & Purnaprajna, M. (2020, May). Gbit/s non-binary LDPC decoders: High-throughput using high-level specifications. In 2020 IEEE 28th Annual International Symposium on Field-Programmable Custom Computing Machines (FCCM) (pp. 226-226). IEEE.</p>
-          </li>
-          <li>
-            <p> <u>Subramaniyan, S</u>., Ferraz, O., Ashuthosh, M. R., Krishna, S., Wang, G., Cavallaro, J. R., ... & Purnaprajna, M. (2020, October). Pushing the limits of energy efficiency for non-binary LDPC decoders on GPUs and FPGAs. In 2020 IEEE Workshop on Signal Processing Systems (SiPS) (pp. 1-6). IEEE.</p>
-          </li>
-          <li>
-            <p>K. Vanishree, A. George, S. Gunisetty, <u>Subramaniyan, S </u>, S. Kashyap R., and M. Purnaprajna, "CoIn: Accelerated CNN Co-Inference through Data Partitioning on Heterogeneous Devices," 2020 6th International Conference on Advanced Computing and Communication Systems (ICACCS), 2020, pp. 90-95, doi: 10.1109/ICACCS48705.2020.9074444.</p>
-          </li>
-        </ol>
-      </div>
-
-      <!-- By Type Section -->
-      <div id="by-type" class="hidden">
-       <h2>Conference Papers</h2>
-      <ol>
-      <li><u>Srinivasan Subramaniyan</u> and Xiaorui Wang. "Exploiting ML Task Correlation in the Minimization of Capital Expense for GPU Data Centers" 44th IEEE -- International Performance Computing and Communications Conference (IPCCC) 2025 </li>
-      <li><u>Srinivasan Subramaniyan</u> and Xiaorui Wang. "FC-GPU: Feedback Control GPU Scheduling for Real-time Embedded Systems" Embedded Systems Week – International Conference on Embedded Software (EMSOFT) 2025.</li>
-      <li>Yuan Ma, <u>Srinivasan Subramaniyan</u>, and Xiaorui Wang."Power Capping of GPU Servers for Machine Learning Inference Optimization" 54th International Conference on Parallel Processing (ICPP) 2025 <a href="presentations/2025icpp_updated.pptx" target="_blank" rel="noopener noreferrer">[slides]</a>.</li>        
-      <li><p>Chen, Guoyu, <u>Srinivasan Subramaniyan</u>, and Xiaorui Wang. "Latency-Guaranteed Co-Location of Inference and Training for Reducing Data Center Expenses"  IEEE 44th International Conference on Distributed Computing Systems (ICDCS) 2024  <a href="presentations/icdcs24_v4.pptx" target="_blank" rel="noopener noreferrer">[slides]</a>. </p> </li>
-      <li>Ashuthosh, M. R., Krishna, S., Sudarshan, V., <u>Subramaniyan, S.</u>, & Purnaprajna, M. (2022, February). MAPPARAT: A Resource Constrained FPGA-Based Accelerator for Sparse-Dense Matrix Multiplication. In 2022 35th International Conference on VLSI Design and 2022 21st International Conference on Embedded Systems (VLSID) (pp. 102-107). IEEE.</li>
-      <li>K. Vanishree, A. George, S. Gunisetty, <u>Subramaniyan, S.</u>, S. Kashyap R., and M. Purnaprajna, "CoIn: Accelerated CNN Co-Inference through Data Partitioning on Heterogeneous Devices," 2020 6th International Conference on Advanced Computing and Communication Systems (ICACCS), 2020, pp. 90-95, doi: 10.1109/ICACCS48705.2020.9074444.</li>
-      </ol>
-
-        <h2>Journal Papers</h2>
-        <ol>
-       <li>
-            <p><u>S. Subramaniyan</u> et al., "Enabling High-Level Design Strategies for High-Throughput and Low-Power NB-LDPC Decoders," in IEEE Design & Test, 2022, doi: 10.1109/MDAT.2022.3202852.</p>
-          </li>
-          <li>
-            <p>Ferraz, O., <u>Subramaniyan, S.</u>, Chinthalaa, R., Andrade, J., Cavallaro, J. R., Nandy, S. K., ... & Falcao, G. (2021). A Survey on High-Throughput Non-Binary LDPC Decoders: ASIC, FPGA, and GPU Architectures. IEEE Communications Surveys & Tutorials, 24(1), 524-556.</p>
-          </li>
-          <li>
-            <p><u>S. Subramaniyan</u> et al., "Pushing the Limits of Energy Efficiency for Non-Binary LDPC Decoders on GPUs and FPGAs," 2020 IEEE Workshop on Signal Processing Systems (SiPS), 2020, pp. 1-6, doi: 10.1109/SiPS50750.2020.9195258.</p>
-          </li>
-        </ol>
-
-        <h2>Workshop Papers</h2>
-        <ol>
-            <li>
-            <p><u>Subramaniyan, Srinivasan</u>, and Xiaorui Wang. "OptiCPD: Optimization For The Canonical Polyadic Decomposition Algorithm on GPUs." 2023 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW). IEEE, 2023.</p>
-          </li>
-          <li>
-            <p>Ferraz, O., <u>Subramaniyan, S.</u>, Wang, G., Cavallaro, J. R., Falcao, G., & Purnaprajna, M. (2020, May). Gbit/s non-binary LDPC decoders: High-throughput using high-level specifications. In 2020 IEEE 28th Annual International Symposium on Field-Programmable Custom Computing Machines (FCCM) (pp. 226-226). IEEE.</p>
-          </li>
+          <li>O. Ferraz, <u>S. Subramaniyan</u>, G. Wang, J. Cavallaro, G. Falcao, & M. Purnaprajna. "Gbit/s Non-Binary LDPC Decoders: High-Throughput Using High-Level Specifications." FCCM, 2020. [<a href="#">Paper</a> | <a href="#">Slides</a>]</li>
+          <li><u>S. Subramaniyan</u>, O. Ferraz, M. R. Ashuthosh, S. Krishna, G. Wang, J. Cavallaro, ... & M. Purnaprajna. "Pushing the Limits of Energy Efficiency for Non-Binary LDPC Decoders on GPUs and FPGAs." SiPS, 2020. [<a href="#">Paper</a> | <a href="#">Slides</a>]</li>
+          <li>K. Vanishree, A. George, S. Gunisetty, <u>S. Subramaniyan</u>, S. Kashyap R., & M. Purnaprajna. "CoIn: Accelerated CNN Co-Inference through Data Partitioning on Heterogeneous Devices." ICACCS, 2020. [<a href="#">Paper</a> | <a href="#">Slides</a>]</li>
         </ol>
       </div>
     </div>
@@ -283,13 +113,11 @@
   </footer>
 
   <script>
-    // Function to filter publications
     function filterPublications(filter) {
       const byYearBtn = document.getElementById('by-year-btn');
       const byTypeBtn = document.getElementById('by-type-btn');
       const byYearSection = document.getElementById('by-year');
       const byTypeSection = document.getElementById('by-type');
-
       if (filter === 'by-year') {
         byYearBtn.classList.add('active');
         byTypeBtn.classList.remove('active');
@@ -302,8 +130,6 @@
         byYearSection.classList.add('hidden');
       }
     }
-
-    // Default to showing by-year section
     filterPublications('by-year');
   </script>
 </body>
