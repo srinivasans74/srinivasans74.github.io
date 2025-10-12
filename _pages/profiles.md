@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: profiles
 permalink: /people/
 title: People
@@ -16,4 +16,4 @@ profiles:
       <p>805 Dreese Labs</p>
       <p>1382 Highland Street</p>
       <p>Columbus, Ohio 43201</p>
----
+--- -->

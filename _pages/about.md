@@ -30,5 +30,3 @@ latest_posts:
 I’m a **senior Ph.D. candidate** in **Electrical and Computer Engineering** at **The Ohio State University**, working in the [**Power-Aware Computer Systems (PACS) Lab**](https://u.osu.edu/pacs/) under **Dr. Xiaorui Wang**.
 
 My research focuses on **GPU scheduling**, **computer architecture**, and **edge/cloud systems**, with an emphasis on **energy-efficient and high-performance computing**. I am the author of several **award-winning papers**, including the **Outstanding Paper Award at EMSOFT 2025** and the **Best Paper Award at VLSID 2022**. I am **actively seeking opportunities** in **computer architecture**, **high-performance computing**, and **systems research**, with a strong interest in developing next-generation **energy-efficient computing architectures**.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
