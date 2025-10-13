@@ -7,7 +7,7 @@ subtitle: <a href='https://u.osu.edu/pacs/'>PACS Lab</a>, ECE Dept., The Ohio St
 profile:
   align: right
   image: prof_pic.jpg
-  image_circular: true # crops the image to make it circular
+  image_circular: false # crops the image to make it circular
   more_info: >
     <p>805 Dreese Laboratories</p>
     <p>2015 Neil Avenue</p>
