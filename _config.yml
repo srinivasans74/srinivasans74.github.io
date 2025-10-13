@@ -68,7 +68,6 @@ serve_og_meta: false # Include Open Graph meta tags in the HTML head
 serve_schema_org: false # Include Schema.org in the HTML head
 og_image: # The site-wide (default for all links) Open Graph preview image
 
-
 # -----------------------------------------------------------------------------
 # Social integration
 # -----------------------------------------------------------------------------
@@ -96,7 +95,7 @@ osf_id: # your OSF ID
 pinterest_id: # your pinterest id
 publons_id: # your ID on Publons
 quora_username: # your Quora username
-research_gate_profile:  # your profile on ResearchGate
+research_gate_profile: # your profile on ResearchGate
 scholar_userid: luGswuwAAAAJ # your Google Scholar ID
 scopus_id: # your profile on Scopus
 semanticscholar_id: # your Semantic Scholar ID
@@ -111,7 +110,6 @@ wikipedia_id: # your wikipedia id (Case sensitive)
 work_url: # work page URL
 x_username: # your X handle
 youtube_id: # your youtube channel id (youtube.com/@<youtube_id>)
-
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification
