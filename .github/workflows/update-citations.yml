@@ -3,11 +3,11 @@ name: Update Google Scholar Citations
 on:
   schedule:
     # Run weekly on Sunday at 12:00 AM UTC
-    - cron: '0 0 * * 0'
-  workflow_dispatch:  # Allow manual triggering
+    - cron: "0 0 * * 0"
+  workflow_dispatch: # Allow manual triggering
 
 permissions:
-  contents: write  # Required for pushing changes back to repo
+  contents: write # Required for pushing changes back to repo
 
 jobs:
   update-citations:
@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
       - name: Install dependencies
         run: |
