@@ -37,6 +37,7 @@
             sizes = "200px"
             class="preview z-depth-1 rounded"
             zoomable=true
+            avoid_scaling=true
             alt=entry.preview
           %}
         {% endif %}
@@ -57,6 +58,11 @@
         {% assign author_array_limit = site.max_author_limit %}
       {% endif %}
 
+      {% assign author_array_limit_with_grace = author_array_limit | plus: 1 %}
+      {% if author_array_size == author_array_limit_with_grace %}
+        {% assign author_array_limit = author_array_size %}
+      {% endif %}
+
       {%- for author in entry.author_array limit: author_array_limit -%}
         {% assign author_is_self = false %}
         {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
@@ -73,13 +79,15 @@
             {% if coauthor.firstname contains author.first %}
               {%- assign coauthor_url = coauthor.url -%}
               {% break %}
-            {% endif %}
+            {%- endif -%}
           {% endfor %}
         {%- endif -%}
 
         {%- if forloop.length > 1 -%}
-          {% if forloop.first == false %},&nbsp;{% endif %}
-          {%- if forloop.last and author_array_limit == author_array_size %}and&nbsp;{% endif -%}
+          {% if forloop.first == false -%}
+            {%- if forloop.length > 2 %}, {% elsif forloop.length == 2 %}  {% endif %}
+          {%- endif %}
+          {%- if forloop.last and author_array_limit == author_array_size %}and {% endif -%}
         {% endif %}
         {%- if author_is_self -%}
           <em>
@@ -189,18 +197,15 @@
           {%- if entry.award_name %}{{ entry.award_name }}{% else %}Awarded{% endif -%}
         </a>
       {% endif %}
-      {% if entry.abstract %}
-        <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
-      {% endif %}
-      {% if entry.doi %}
-        <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button">DOI</a>
-      {% endif %}
+      <!--
+        {% if entry.abstract %}
+          <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
+        {% endif %}
+      -->
       {% if entry.arxiv %}
         <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
       {% endif %}
-      {% if entry.bibtex_show %}
-        <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
-      {% endif %}
+      <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
       {% if entry.html %}
         {% if entry.html contains '://' %}
           <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
@@ -208,11 +213,28 @@
           <a href="{{ entry.html | prepend: '/assets/html/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
         {% endif %}
       {% endif %}
-      {% if entry.pdf %}
-        {% if entry.pdf contains '://' %}
-          <a href="{{ entry.pdf }}" class="btn btn-sm z-depth-0" role="button">PDF</a>
+      {% if entry.doi %}
+        <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button">DOI</a>
+      {% endif %}
+      {% assign btn_name = 'PDF' %}
+      {% assign btn_title = 'PDF' %}
+      {% assign btn_dst = entry.pdf %}
+      {% unless entry.pdf %}
+        {% assign btn_dst = entry.preprint %}
+      {% endunless %}
+      {% unless entry.redirect %}
+        {% if entry.preprint %}
+          {% assign btn_name = 'PRE' %}
+          {% assign btn_title = 'Preprint' %}
+        {% endif %}
+      {% endunless %}
+      {% if btn_dst %}
+        {% if btn_dst contains '://' %}
+          <a href="{{ btn_dst }}" class="btn btn-sm z-depth-0" role="button" title="{{btn_title}}">{{ btn_name }}</a>
         {% else %}
-          <a href="{{ entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button">PDF</a>
+          <a href="{{ btn_dst | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button" title="{{btn_title}}">
+            {{- btn_name -}}
+          </a>
         {% endif %}
       {% endif %}
       {% if entry.supp %}
@@ -258,7 +280,7 @@
       {% endif %}
 
       {% assign entry_has_dimensions_badge = false %}
-      {% if entry.dimensions and entry.dimensions != 'false' %}
+      {% if entry.doi != blank and entry.dimension != 'hide' %}
         {% assign entry_has_dimensions_badge = true %}
       {% endif %}
 
@@ -310,7 +332,7 @@
           {% endif %}
           {% if site.enable_publication_badges.google_scholar and entry_has_google_scholar_badge %}
             <a
-              href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ site.scholar_userid }}&citation_for_view={{ site.scholar_userid }}:{{ entry.google_scholar_id }}"
+              href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user={{ site.data.socials.scholar_userid }}&citation_for_view={{ site.data.socials.scholar_userid }}:{{ entry.google_scholar_id }}"
               aria-label="Google Scholar link"
               role="button"
             >
@@ -368,14 +390,12 @@
       </div>
     {% endif %}
 
-    {% if entry.bibtex_show %}
-      <!-- Hidden bibtex block -->
-      <div class="bibtex hidden">
-        {% highlight bibtex %}
-        {{- entry.bibtex | hideCustomBibtex -}}
-        {% endhighlight %}
-      </div>
-    {% endif %}
+    <!-- Hidden bibtex block -->
+    <div class="bibtex hidden">
+      {% highlight bibtex %}
+      {{- entry.bibtex | hideCustomBibtex -}}
+      {% endhighlight %}
+    </div>
 
     {% if entry.video and site.enable_video_embedding %}
       <!-- Hidden video block -->
