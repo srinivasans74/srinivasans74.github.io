@@ -12,7 +12,7 @@ from datetime import datetime
 from scholarly import scholarly
 
 # Configuration
-SCHOLAR_USER_ID = "BzYoaL8AAAAJ"  # Your Google Scholar ID
+SCHOLAR_USER_ID = "luGswuwAAAAJ"  # Your Google Scholar ID
 OUTPUT_FILE = "_data/citations.yml"
 MAX_RETRIES = 3
 
