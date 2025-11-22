@@ -8,10 +8,12 @@ related_posts: false
 Our paper **“SEEB-GPU”** has been accepted for publication at **SEC 2025**.
 
 ---
+
 layout: post
 date: 2025-11-22 15:59:00-0400
 inline: true
 related_posts: false
+
 ---
 
 **“Exploiting ML Task Correlation in the Minimization of Capital Expense for GPU Data Centers.”**
