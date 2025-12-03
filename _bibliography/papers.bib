@@ -24,7 +24,6 @@ selected={true}
 
 
 
-
 @article{10.1145/3761812,
 author       = {Subramaniyan, Srinivasan and Wang, Xiaorui},
 title        = {FC-GPU: Feedback Control GPU Scheduling for Real-Time Embedded Systems},
@@ -57,14 +56,14 @@ selected={true}
   title={Latency-Guaranteed Co-Location of Inference and Training for Reducing Data Center Expenses}, 
   year={2024},
   url={https://ieeexplore.ieee.org/abstract/document/10630927},
-  slides={},
+  slides={icdcs24_v4.pptx},
   paper={},
   google_scholar_id = {ufrVoPGSRksC},
   abstract={Today's data centers often need to run various machine learning (ML) applications with stringent SLO (Service-Level Objective) requirements, such as inference latency. To that end, data centers prefer to 1) over-provision the number of servers used for inference processing and 2) isolate them from other servers that run ML training, despite both use GPUs extensively, to minimize possible competition of computing resources. Those practices result in a low GPU utilization and thus a high capital expense. Hence, if training and inference jobs can be safely co-located on the same GPUs with explicit SLO guarantees, data centers could flexibly run fewer training jobs when an inference burst arrives and run more afterwards to increase GPU utilization, reducing their capital expenses. In this paper, we propose GPUColo, a two-tier co-location solution that provides explicit ML inference SLO guarantees for co-located GPUs. In the outer tier, we exploit GPU spatial sharing to dynamically adjust the percentage of active GPU threads allocated to spatially co-located inference and training processes, so that the inference latency can be guaranteed. Because spatial sharing can introduce considerable overheads and thus cannot be conducted at a fine time granularity, we design an inner tier that puts training jobs into periodic sleep, so that the inference jobs can quickly get more GPU resources for more prompt latency control. Our hardware testbed results show that GPUColo can precisely control the inference latency to the desired SLO, while maximizing the throughput of the training jobs co-located on the same GPUs. Our large-scale simulation with a 57-day real-world data center trace (6500 GPUs) also demonstrates that GPU Colo enables latency-guaranteed inference and training co-location. Consequently, it allows 74.9 % of GPUs to be saved for a much lower capital expense.},  
   pages={473-484},
   keywords={Training;Data centers;Graphics processing units;Machine learning;Throughput;Hardware;Servers;Machine learning;data center;inference;latency;GPU;co-location},
   doi={10.1109/ICDCS60910.2024.00051},
-  selected={true} 
+  selected={false} 
   }
 
 
