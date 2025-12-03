@@ -1,5 +1,30 @@
 ---
 ---
+
+@inproceedings{10.1145/3769102.3772715,
+author = {Subramaniyan, Srinivasan and Joshi, Rudra and Wang, Xiaorui and Brocanelli, Marco},
+title = {SEEB-GPU: Early-Exit Aware Scheduling and Batching for Edge GPU Inference},
+year = {2025},
+isbn = {9798400722387},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3769102.3772715},
+doi = {10.1145/3769102.3772715},
+pdf = {SEC.pdf},
+slides= {SEC_2025_Presentation.pptx},
+booktitle = {Proceedings of the Tenth ACM/IEEE Symposium on Edge Computing},
+articleno = {9},
+numpages = {16},
+keywords = {edge inference, GPU resource management, early-exit DNNs},
+location = {the Hilton Arlington National Landing, Arlington, VA, USA},
+series = {SEC '25},
+selected={true} 
+}
+
+
+
+
+
 @article{10.1145/3761812,
 author       = {Subramaniyan, Srinivasan and Wang, Xiaorui},
 title        = {FC-GPU: Feedback Control GPU Scheduling for Real-Time Embedded Systems},
@@ -15,7 +40,7 @@ doi          = {10.1145/3761812},
 google_scholar_id = {WF5omc3nYNoC},
 pdf          = {3761812.pdf},
 code         = {https://github.com/srinivasans74?tab=repositories},
-slides       = {https://github.com/srinivasans74/srinivasans74.github.io/tree/main/assets/slides/1-325-Subramaniyan-pres.pptx},
+slides       = {1-325-Subramaniyan-pres.pptx},
 abstract     = {GPUs have recently been adopted in many real-time embedded systems. However, existing GPU scheduling solutions are mostly open-loop and rely on the estimation of worst-case execution time (WCET). Although adaptive solutions, such as feedback control scheduling, have been previously proposed to handle this challenge for CPU-based real-time tasks, they cannot be directly applied to GPUs, because GPUs have different and more complex architectures and so schedulable utilization bounds cannot apply to GPUs yet. In this article, we propose FC-GPU, the first feedback control GPU scheduling framework for real-time embedded systems. To model the GPU resource contention among tasks, we analytically derive a multi-input–multi-output (MIMO) system model that captures the impacts of task rate adaptation on the response times of different tasks. Building on this model, we design a MIMO controller that dynamically adjusts task rates based on measured response times. Our extensive hardware testbed results on an NVIDIA RTX 3090 GPU and an AMD MI-100 GPU demonstrate that FC-GPU can provide better real-time performance even when the task execution times significantly increase at runtime.},
 journal      = {ACM Transactions on Embedded Computing Systems},
 month        = sep,
