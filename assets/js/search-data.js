@@ -51,12 +51,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/service/";
           },
-        },{id: "books-the-godfather",
-          title: 'The Godfather',
-          description: "",
-          section: "Books",handler: () => {
-              window.location.href = "/books/the_godfather/";
-            },},{id: "news-i-presented-my-paper-at-esweek-emsoft-2025-where-it-was-selected-as-a-best-paper-candidate",
+        },{id: "news-i-presented-my-paper-at-esweek-emsoft-2025-where-it-was-selected-as-a-best-paper-candidate",
           title: 'I presented my paper at ESWEEK (EMSOFT) 2025, where it was selected as...',
           description: "",
           section: "News",},{id: "news-our-paper-seeb-gpu-has-been-accepted-for-publication-at-sec-2025",
