@@ -2,10 +2,10 @@
 layout: default
 permalink: /blog/
 title: Blogs
-nav: true
+nav: false
 nav_order: 1
 pagination:
-  enabled: false
+enabled: false
 ---
 
 <div class="post text-center" style="margin-top: 3rem; margin-bottom: 3rem;">
