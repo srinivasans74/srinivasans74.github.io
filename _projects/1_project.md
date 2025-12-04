@@ -25,7 +25,7 @@ As ML cloud services continue to grow, the ability to run GPUs and servers at **
 
 ## Publications from this project
 
-This project has produced the following **papers**. The BibTeX entries are already in your publications; here we cite them using al-folio’s `{% cite %}` tags.
+This project has produced the following **papers**.
 
 1. **SEEB-GPU** (SEC ’25) {% cite 10.1145/3769102.3772715 %}  
    Developed **SEEB-GPU**, an edge inference framework that jointly optimizes batching, early exits, and GPU partitioning to reduce latency by up to **15×** while ensuring SLA compliance.
@@ -38,7 +38,7 @@ This project has produced the following **papers**. The BibTeX entries are alrea
    Implemented **CapGPU**, a coordinated CPU–GPU power-capping strategy that improves inference throughput by **8–20%** while maintaining latency SLOs under power constraints.
 -->
 
-3. **GPUColo** (ICDCS ’24) {% cite 10630927 %}  
+2. **GPUColo** (ICDCS ’24) {% cite gpucolo2024icdcs %}  
    Built **GPUColo**, a co-location framework that enables training and inference workloads to share GPUs, saving up to **74.9%** of GPUs and significantly reducing CapEx while meeting strict SLO requirements.
 
 ---
