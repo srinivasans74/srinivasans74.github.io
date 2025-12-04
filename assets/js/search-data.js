@@ -39,7 +39,7 @@ ninja.data = [{
           },
         },{id: "nav-miscellaneous",
           title: "Miscellaneous",
-          description: "A little corner for travel, books, and fun.",
+          description: "A little corner for articles, books, and travel.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/miscellaneous/";
