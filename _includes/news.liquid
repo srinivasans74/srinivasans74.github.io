@@ -1,21 +1,13 @@
 <div class="news">
   {% if site.news != blank %}
-    {% assign news_size = site.news | size %}
-    <div
-      class="table-responsive"
-      {% if include.limit and page.announcements.scrollable and news_size > 3 %}
-        style="max-height: 60vw"
-      {% endif %}
-    >
+    {% assign news_sorted = site.news | sort: 'date' | reverse %}
+    {% assign top_news = news_sorted | slice: 0, 3 %}
+
+    <div class="table-responsive">
       <table class="table table-sm table-borderless">
-        {% assign news = site.news | reverse %}
-        {% if include.limit and page.announcements.limit %}
-          {% assign news_limit = page.announcements.limit %}
-        {% else %}
-          {% assign news_limit = news_size %}
-        {% endif %}
-        {% for item in news limit: news_limit %}
-          <tr>
+        <!-- Top 3 news -->
+        {% for item in top_news %}
+          <tr class="news-item">
             <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
             <td>
               {% if item.inline %}
@@ -26,9 +18,47 @@
             </td>
           </tr>
         {% endfor %}
+
+        <!-- Hidden remaining news -->
+        <tbody id="more-news" style="display: none;">
+          {% assign remaining_news = news_sorted | slice: 3, news_sorted.size %}
+          {% for item in remaining_news %}
+            <tr>
+              <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
+              <td>
+                {% if item.inline %}
+                  {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+                {% else %}
+                  <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                {% endif %}
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
       </table>
     </div>
+
+    <!-- Show more / Show less button -->
+    <div class="text-center">
+      <button id="toggle-news-btn" class="btn btn-outline-primary btn-sm" onclick="toggleNews()">Show more news ▼</button>
+    </div>
+
   {% else %}
     <p>No news so far...</p>
   {% endif %}
 </div>
+
+<script>
+  function toggleNews() {
+    const moreNews = document.getElementById('more-news');
+    const btn = document.getElementById('toggle-news-btn');
+
+    if (moreNews.style.display === 'none') {
+      moreNews.style.display = 'table-row-group';
+      btn.textContent = 'Show less ▲';
+    } else {
+      moreNews.style.display = 'none';
+      btn.textContent = 'Show more news ▼';
+    }
+  }
+</script>
