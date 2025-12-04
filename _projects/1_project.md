@@ -1,81 +1,44 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: Latency-Controlled and Cost-Efficient GPU Scheduling for AI Workloads
+#description: with background image
+#img: assets/img/1.jpg
 importance: 1
 category: work
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+Data centers often over-provision GPUs for online machine learning (ML) inference to handle bursty request arrivals. This over-provisioning leads to unnecessarily high capital expenses (CapEx).
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+This project aims to design a holistic management framework that handles bursty ML inference requests with strict latency guarantees while minimizing CapEx. The framework:
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+- **Co-locates ML inference and training workloads** on the same GPUs with latency guarantees, improving overall GPU utilization. During bursts, GPUs are used mostly for inference; afterwards, capacity is shifted back to training, reducing the number of GPUs required.
+- **Schedules and consolidates negatively correlated ML tasks** onto shared GPUs to reduce resource contention and further lower CapEx.
+- **Uses resource-aware partitioning, batching, and TPC masking** for GPUs in edge servers, where SLAs are strict and hardware resources are limited.
+- **Applies power capping of ML servers** used for AI inference to improve throughput while respecting both power and latency constraints.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+Beyond GPU-level scheduling, the project also targets **power and cooling CapEx**. Instead of relying solely on expensive power infrastructure upgrades to handle occasional worst-case bursts, the framework exploits **existing energy storage devices** (common in modern data centers) to supply additional power during bursts. This allows data centers to avoid or defer costly facility upgrades while still meeting latency and reliability targets.
+. This enables data centers to safely handle large-scale ML inference bursts with explicit latency guarantees, while significantly reducing both compute and infrastructure CapEx.
+As ML cloud services continue to grow, the ability to run GPUs and servers at **higher performance and lower cost** has direct impact on both large providers and smaller ML/AI companies that depend on the cloud. Lower data center CapEx can translate into lower cloud bills and a lower barrier to entry for start-ups.
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+---
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+## Publications from this project
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+This project has produced the following **papers**. The BibTeX entries are already in your publications; here we cite them using al-folio’s `{% cite %}` tags.
 
-{% raw %}
+1. **SEEB-GPU** (SEC ’25) {% cite 10.1145/3769102.3772715 %}  
+   Developed **SEEB-GPU**, an edge inference framework that jointly optimizes batching, early exits, and GPU partitioning to reduce latency by up to **15×** while ensuring SLA compliance.
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+<!-- 2. **CorrGPU** (IPCCC ’25) {% cite corrgpu2025ipccc %}
+   Proposed **CorrGPU**, a correlation-aware GPU scheduler that dynamically pairs complementary workloads to reduce contention and lower CapEx by **≈20.9%** in large-scale ML traces. -->
 
-{% endraw %}
+<!--
+3. **CapGPU** (ICPP ’25) {% cite capgpu2025icpp %}
+   Implemented **CapGPU**, a coordinated CPU–GPU power-capping strategy that improves inference throughput by **8–20%** while maintaining latency SLOs under power constraints.
+-->
+
+3. **GPUColo** (ICDCS ’24) {% cite 10630927 %}  
+   Built **GPUColo**, a co-location framework that enables training and inference workloads to share GPUs, saving up to **74.9%** of GPUs and significantly reducing CapEx while meeting strict SLO requirements.
+
+---
