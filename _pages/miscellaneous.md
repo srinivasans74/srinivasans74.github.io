@@ -30,6 +30,7 @@ nav_order: 6
               src="//clustrmaps.com/map_v2.js?d=REPLACE_WITH_YOUR_CODE&cl=ffffff&w=a">
       </script>
     </div>
+
   </div>
 
   <!-- RIGHT COLUMN: Books -->
@@ -48,6 +49,7 @@ nav_order: 6
       travel notes, thoughts, life lessons, research reflections, or anything
       interesting worth sharing.
     </p>
+
   </div>
 
 </div>
