@@ -2,7 +2,7 @@
 layout: page
 permalink: /miscellaneous/
 title: Miscellaneous
-description: A little corner for articles, books, and travel.
+#description: A little corner for articles, books, and travel.
 nav: true
 nav_order: 6
 ---
@@ -34,41 +34,26 @@ nav_order: 6
 
     <ul class="article-list">
       <li>
-        <a href="https://example.com/article1" target="_blank">
-          Example Article Title 1
-        </a> — Publication Name
-      </li>
-
-      <li>
-        <a href="https://example.com/article2" target="_blank">
-          Example Article Title 2
-        </a> — Magazine / News Site
-      </li>
-
-      <li>
-        <a href="https://example.com/article3" target="_blank">
-          Example Article Title 3
-        </a> — Blog / Interview
+        <a href="https://www.facebook.com/eceosu/photos/congratulations-to-ece-student-srinivasan-subramaniyan-whose-paper-fc-gpu-feedba/1395633269233260/" target="_blank">
+          Facebook: ECE OSU post about my paper
+        </a>
+        <br/>
+        <a href="https://www.instagram.com/p/DQsDCHlDfZn/" target="_blank">
+          Instagram: ECE OSU appreciation post
+        </a>
+        <span> — ECE Department, The Ohio State University</span>
       </li>
     </ul>
-
-    <p><em>(Send me the links and I will replace the placeholders!)</em></p>
 
   </div>
 
   <!-- RIGHT COLUMN: Favorite Books -->
   <div class="col-md-4 misc-section">
     <h2>📚 My Favorite Books</h2>
-
-    <ul class="book-list">
+    <ol class="book-list">
       <li><em>Atomic Habits</em> — James Clear</li>
       <li><em>Sapiens</em> — Yuval Noah Harari</li>
-      <li><em>Deep Work</em> — Cal Newport (optional)</li>
-      <li><em>The Subtle Art of Not Giving a F*</em> — Mark Manson (optional)</li>
-    </ul>
-
-    <p><em>(Add/remove books anytime!)</em></p>
-
+    </ol>
   </div>
 
 </div>
@@ -80,18 +65,17 @@ nav_order: 6
   <h2>🗽 States I've Visited in the United States</h2>
   <p>Here's a growing list of states I've had the chance to explore:</p>
 
- <div class="state-list">
-  <span class="state-badge">California</span>
-  <span class="state-badge">Florida</span>
-  <span class="state-badge">Illinois</span>
-  <span class="state-badge">Michigan</span>
-  <span class="state-badge">New Jersey</span>
-  <span class="state-badge">New York</span>
-  <span class="state-badge">Ohio</span>
-  <span class="state-badge">Texas</span>
-  <span class="state-badge">Washington</span>
-</div>
-
+  <div class="state-list">
+    <span class="state-badge">California</span>
+    <span class="state-badge">Florida</span>
+    <span class="state-badge">Illinois</span>
+    <span class="state-badge">Michigan</span>
+    <span class="state-badge">New Jersey</span>
+    <span class="state-badge">New York</span>
+    <span class="state-badge">Ohio</span>
+    <span class="state-badge">Texas</span>
+    <span class="state-badge">Washington</span>
+  </div>
 </div>
 
 <hr>
