@@ -53,6 +53,7 @@ nav_order: 6
     </ul>
 
     <p><em>(Send me the links and I will replace the placeholders!)</em></p>
+
   </div>
 
   <!-- RIGHT COLUMN: Favorite Books -->
@@ -67,6 +68,7 @@ nav_order: 6
     </ul>
 
     <p><em>(Add/remove books anytime!)</em></p>
+
   </div>
 
 </div>
@@ -89,7 +91,6 @@ nav_order: 6
   <span class="state-badge">Texas</span>
   <span class="state-badge">Washington</span>
 </div>
-
 
 </div>
 
