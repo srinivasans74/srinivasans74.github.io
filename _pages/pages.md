@@ -1,16 +1,10 @@
 ---
 layout: page
 permalink: /Achievements/
-title: teaching
+title: Achievements
 nav: true
 nav_order: 6
 ---
-
-> Don't work for recognition, but do work worthy of recognition.
->
-> -- H. Jackson Brown Jr.
-
-## Achievements & Awards
 
 - **Best Paper Runner-Up Award**: IEEE International Performance Computing and Communications Conference (IPCCC) 2025.
 - **EMSOFT Outstanding Paper Award**: International Conference on Embedded Software (EMSOFT 2025).
