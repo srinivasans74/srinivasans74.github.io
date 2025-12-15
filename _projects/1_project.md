@@ -30,15 +30,13 @@ This project has produced the following **papers**.
 1. **SEEB-GPU** (SEC ’25) {% cite 10.1145/3769102.3772715 %}  
    Developed **SEEB-GPU**, an edge inference framework that jointly optimizes batching, early exits, and GPU partitioning to reduce latency by up to **15×** while ensuring SLA compliance.
 
-<!-- 2. **CorrGPU** (IPCCC ’25) {% cite corrgpu2025ipccc %}
+2. **CorrGPU** (IPCCC ’25) {% cite CorrGPU %}
    Proposed **CorrGPU**, a correlation-aware GPU scheduler that dynamically pairs complementary workloads to reduce contention and lower CapEx by **≈20.9%** in large-scale ML traces. -->
 
-<!--
-3. **CapGPU** (ICPP ’25) {% cite capgpu2025icpp %}
+3. **CapGPU** (ICPP ’25) {% cite CapGPU %}
    Implemented **CapGPU**, a coordinated CPU–GPU power-capping strategy that improves inference throughput by **8–20%** while maintaining latency SLOs under power constraints.
--->
 
-2. **GPUColo** (ICDCS ’24) {% cite gpucolo2024icdcs %}  
+4. **GPUColo** (ICDCS ’24) {% cite gpucolo2024icdcs %}  
    Built **GPUColo**, a co-location framework that enables training and inference workloads to share GPUs, saving up to **74.9%** of GPUs and significantly reducing CapEx while meeting strict SLO requirements.
 
 ---
