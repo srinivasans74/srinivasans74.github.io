@@ -8,10 +8,20 @@ nav_order: 7
 
 ## Selected Professional Service
 
-1. Program Committee Member: IPDPSW (JSSPP 2026)
-2. Program Committee Member: International Conference on Advanced Scientific Computing & Machine Learning (ASCML 2026)
-3. Reviewer The Journal of Supercomputing.
+1. **Program Committee Member**
 
-## Student Organization
+   1. IPDPSW (JSSPP 2026)
+   2. International Conference on Advanced Scientific Computing & Machine Learning (ASCML 2026)
 
-1. Treasurer for the organization IEEE GSB at OSU (2025)
+2. **Reviewer**
+
+   1. The Journal of Supercomputing
+   2. ACM Transactions on Embedded Computing Systems (ACM TECS)
+
+3. **Publicity Chair**
+   1. GreenSys 2026
+
+## Student Organizations
+
+1. **Treasurer**
+   1. IEEE Graduate Student Branch (GSB), The Ohio State University (2025–Present)
