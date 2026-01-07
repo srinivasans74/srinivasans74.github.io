@@ -16,7 +16,6 @@ nav_order: 7
 2. **Reviewer**
 
    1. The Journal of Supercomputing
-   2. ACM Transactions on Embedded Computing Systems (ACM TECS)
 
 3. **Publicity Chair**
    1. GreenSys 2026
