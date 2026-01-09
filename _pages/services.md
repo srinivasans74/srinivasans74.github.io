@@ -10,8 +10,9 @@ nav_order: 7
 
 1. **Program Committee Member**
 
-   1. IPDPSW (JSSPP 2026)
-   2. International Conference on Advanced Scientific Computing & Machine Learning (ASCML 2026)
+   1. 29th Workshop on Job Scheduling Strategies for Parallel Processing (JSSPP 2026) : IPDPSW 2026
+   2. HPC for AI Foundation Models & LLMs for Science (HPS4AI 2026) : IPDPSW 2026
+   3. International Conference on Advanced Scientific Computing & Machine Learning (ASCML 2026)
 
 2. **Reviewer**
 
