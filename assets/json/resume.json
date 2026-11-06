@@ -40,11 +40,8 @@
       "url": "https://www.amd.com/",
       "startDate": "2026-05-02",
       "endDate": "2026-08-21",
-      "summary": "Optimized the scheduling of GP-GPU kernels to accelerate graph-based applications, improving performance and efficiency.",
-      "highlights": [
-        "Worked on GPU workload scheduling optimizations for graph-based applications.",
-        "Enhanced compute efficiency and resource utilization for AMD research workloads."
-      ]
+      "summary": "Developed NUMA-aware optimizations for LLM inference workloads on multi-GPU platforms.",
+      "highlights": ["Improved memory locality and reduced cross-socket communication overhead for LLM inference workloads."]
     },
 
     {
