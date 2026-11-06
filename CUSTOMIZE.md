@@ -93,6 +93,14 @@ To add publications create a new entry in the [\_bibliography/papers.bib](_bibli
 
 You can add extra information to a publication, like a PDF file in the `assets/pdfs/` directory and add the path to the PDF file in the BibTeX entry with the `pdf` field. Some of the supported fields are: `abstract`, `altmetric`, `annotation`, `arxiv`, `bibtex_show`, `blog`, `code`, `dimensions`, `doi`, `eprint`, `html`, `isbn`, `pdf`, `pmid`, `poster`, `slides`, `supp`, `video`, and `website`.
 
+### Publication filters
+
+The publications page combines type, year, and text filters while keeping the newest year first. Years come from each entry's `year` field. `@article` entries appear under Journal and `@inproceedings` under Conference. For a workshop, add `publication_type={workshop},` to its BibTeX entry. You can also override the type with `journal` or `conference`; this display field is omitted from exported BibTeX.
+
+The controls are enabled by `publication_filters: true` in `_pages/publications.md`. Text search follows `bib_search` in `_config.yml`. Without JavaScript, all publications remain visible. The homepage's selected papers keep their existing layout.
+
+For a browser regression check, serve the repository root (`python3 -m http.server 8000`) and open `http://localhost:8000/_scripts/test-publication-filters.html`. The result should read `PASS`.
+
 ### Author annotation
 
 In publications, the author entry for yourself is identified by string array `scholar:last_name` and string array `scholar:first_name` in [\_config.yml](_config.yml). For example, if you have the following entry in your [\_config.yml](_config.yml):

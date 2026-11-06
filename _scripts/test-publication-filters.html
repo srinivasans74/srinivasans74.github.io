@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <meta charset="utf-8">
+  <title>Publication filter regression check</title>
+  <style>
+    .unloaded { display: none; }
+  </style>
+  <div class="publications">
+    <div id="publication-filters" hidden>
+      <button data-type="" aria-pressed="true">All</button>
+      <button data-type="journal" aria-pressed="false">Journal</button>
+      <button data-type="conference" aria-pressed="false">Conference</button>
+      <button data-type="workshop" aria-pressed="false">Workshop</button>
+      <select id="publication-year"><option value="">All years</option></select>
+    </div>
+    <input id="bibsearch" aria-label="Search publications">
+    <p id="publication-empty" role="status" hidden>No matching publications.</p>
+    <h2 class="bibliography">2025</h2>
+    <ol class="bibliography">
+      <li><div data-type="journal" data-year="2025">GPU journal <a href="#paper">Paper</a></div></li>
+      <li><div data-type="conference" data-year="2025">GPU conference</div></li>
+    </ol>
+    <h2 class="bibliography">2023</h2>
+    <ol class="bibliography">
+      <li><div data-type="workshop" data-year="2023">CPU workshop</div></li>
+      <li><div data-type="conference" data-year="2023">CPU conference</div></li>
+    </ol>
+  </div>
+  <div class="unloaded" id="unrelated">Unrelated hidden content</div>
+  <pre id="result">RUNNING</pre>
+  <script type="module">
+    import "../assets/js/bibsearch.js";
+
+    document.addEventListener("DOMContentLoaded", async () => {
+      const assert = (condition, message) => { if (!condition) throw new Error(message); };
+      const visible = () => [...document.querySelectorAll(".bibliography > li:not(.unloaded)")];
+      const chooseType = (type) => document.querySelector(`button[data-type="${type}"]`).click();
+      const year = document.getElementById("publication-year");
+      const chooseYear = (value) => { year.value = value; year.dispatchEvent(new Event("change")); };
+      const search = document.getElementById("bibsearch");
+      try {
+        assert(!document.getElementById("publication-filters").hidden, "Controls should become available");
+        assert([...year.options].map((option) => option.value).join() === ",2025,2023", "Years should be unique and descending");
+        chooseType("conference");
+        assert(visible().length === 2, "Type should filter across years");
+        assert(document.querySelector('button[data-type="conference"]').getAttribute("aria-pressed") === "true", "Selected type should be announced");
+        chooseYear("2023");
+        assert(visible().length === 1 && visible()[0].textContent.includes("CPU conference"), "Type and year should combine");
+        assert(document.querySelector("h2").classList.contains("unloaded"), "Empty year heading should disappear");
+        chooseType("journal");
+        assert(visible().length === 0 && !document.getElementById("publication-empty").hidden, "Empty intersections should explain no results");
+        chooseType("workshop");
+        assert(visible().length === 1 && visible()[0].textContent.includes("workshop"), "Explicit workshop metadata should work");
+        chooseType("");
+        chooseYear("");
+        search.value = "gPu";
+        search.dispatchEvent(new Event("input"));
+        await new Promise((resolve) => setTimeout(resolve, 350));
+        assert(visible().length === 2, "Search should ignore case");
+        chooseType("journal");
+        assert(visible().length === 1, "Search should combine with type");
+        search.value = "";
+        search.dispatchEvent(new Event("input"));
+        await new Promise((resolve) => setTimeout(resolve, 350));
+        chooseType("");
+        assert(visible().length === 4, "Clearing filters should restore all entries");
+        assert(document.querySelectorAll("h2.unloaded").length === 0, "Clearing filters should restore headings");
+        assert(document.getElementById("publication-empty").hidden, "Empty message should clear");
+        assert(document.getElementById("unrelated").classList.contains("unloaded"), "Filtering must not reveal unrelated content");
+        assert(document.querySelector("li a").getAttribute("href") === "#paper", "Paper links should survive filtering");
+        document.getElementById("result").textContent = "PASS";
+      } catch (error) {
+        document.getElementById("result").textContent = `FAIL: ${error.message}`;
+        throw error;
+      }
+    });
+  </script>
+</html>

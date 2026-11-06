@@ -1,6 +1,13 @@
 ---
 ---
-<div class="row">
+{% assign publication_type = entry.type | downcase %}
+{% case publication_type %}
+  {% when 'article' %}
+    {% assign publication_type = 'journal' %}
+  {% when 'inproceedings' %}
+    {% assign publication_type = 'conference' %}
+{% endcase %}
+<div class="row" data-type="{{ entry.publication_type | default: publication_type | downcase | escape }}" data-year="{{ entry.year | escape }}">
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-2 abbr">
       {%- if entry.abbr -%}

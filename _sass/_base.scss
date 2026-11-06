@@ -703,6 +703,38 @@ footer.sticky-bottom {
 .publications {
   margin-top: 2rem;
 
+  .publication-filter-row,
+  .publication-types {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .publication-filter-row {
+    margin-bottom: 1rem;
+
+    label {
+      margin: 0 0 0 0.5rem;
+    }
+
+    button,
+    select {
+      border: 1px solid var(--global-text-color);
+      border-radius: 4px;
+      padding: 0.25rem 0.5rem;
+      color: var(--global-text-color);
+      background: var(--global-bg-color);
+      font: inherit;
+    }
+
+    button[aria-pressed="true"] {
+      color: var(--global-bg-color);
+      background: var(--global-theme-color);
+      border-color: var(--global-theme-color);
+    }
+  }
+
   h1 {
     color: var(--global-theme-color);
     font-size: 2rem;
