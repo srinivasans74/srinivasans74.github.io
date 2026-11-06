@@ -6,6 +6,8 @@
     {% assign publication_type = 'journal' %}
   {% when 'inproceedings' %}
     {% assign publication_type = 'conference' %}
+  {% when 'mastersthesis', 'phdthesis', 'thesis' %}
+    {% assign publication_type = 'thesis' %}
 {% endcase %}
 <div class="row" data-type="{{ entry.publication_type | default: publication_type | downcase | escape }}" data-year="{{ entry.year | escape }}">
   {% if site.enable_publication_thumbnails %}
