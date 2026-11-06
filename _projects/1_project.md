@@ -3,8 +3,8 @@ layout: page
 title: Latency-Controlled and Cost-Efficient GPU Scheduling for AI Workloads
 #description: with background image
 #img: assets/img/1.jpg
-importance: 1
-category: work
+importance: 2
+category: PhD
 related_publications: true
 ---
 

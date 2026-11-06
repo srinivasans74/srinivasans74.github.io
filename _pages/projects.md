@@ -6,7 +6,7 @@ permalink: /projects/
 nav: true
 nav_order: 3
 # display_categories: [work, fun]
-display_categories: [work]
+display_categories: [PhD]
 horizontal: false
 ---
 

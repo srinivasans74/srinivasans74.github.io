@@ -38,8 +38,21 @@
       "name": "Advanced Micro Devices (AMD)",
       "position": "Research Intern",
       "url": "https://www.amd.com/",
-      "startDate": "2022-05-01",
-      "endDate": "2022-08-01",
+      "startDate": "2026-05-02",
+      "endDate": "2026-08-21",
+      "summary": "Optimized the scheduling of GP-GPU kernels to accelerate graph-based applications, improving performance and efficiency.",
+      "highlights": [
+        "Worked on GPU workload scheduling optimizations for graph-based applications.",
+        "Enhanced compute efficiency and resource utilization for AMD research workloads."
+      ]
+    },
+
+    {
+      "name": "Advanced Micro Devices (AMD)",
+      "position": "Research Intern",
+      "url": "https://www.amd.com/",
+      "startDate": "2022-05-16",
+      "endDate": "2022-08-07",
       "summary": "Optimized the scheduling of GP-GPU kernels to accelerate graph-based applications, improving performance and efficiency.",
       "highlights": [
         "Worked on GPU workload scheduling optimizations for graph-based applications.",
