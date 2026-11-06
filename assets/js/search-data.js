@@ -87,6 +87,11 @@ ninja.data = [{
           description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
+            },},{id: "projects-adaptive-scheduling-and-resource-management-for-real-time-embedded-gpu-systems",
+          title: 'Adaptive Scheduling and Resource Management for Real-Time Embedded GPU Systems',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
             },},{
         id: 'social-email',
         title: 'email',
